@@ -13,6 +13,22 @@
 		EEE5741A2B7B76220040AC56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574192B7B76220040AC56 /* ViewController.swift */; };
 		EEE5741F2B7B76240040AC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEE5741E2B7B76240040AC56 /* Assets.xcassets */; };
 		EEE574222B7B76240040AC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEE574202B7B76240040AC56 /* LaunchScreen.storyboard */; };
+		EEE5742F2B7B79970040AC56 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5742E2B7B79970040AC56 /* FeedViewController.swift */; };
+		EEE574312B7B79AB0040AC56 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574302B7B79AB0040AC56 /* MainTabBarViewController.swift */; };
+		EEE5743E2B7B7A270040AC56 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE574362B7B7A260040AC56 /* Pretendard-Regular.otf */; };
+		EEE5743F2B7B7A270040AC56 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE574372B7B7A260040AC56 /* Pretendard-Light.otf */; };
+		EEE574402B7B7A270040AC56 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE574382B7B7A270040AC56 /* Pretendard-SemiBold.otf */; };
+		EEE574412B7B7A270040AC56 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE574392B7B7A270040AC56 /* Pretendard-ExtraLight.otf */; };
+		EEE574422B7B7A270040AC56 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE5743A2B7B7A270040AC56 /* Pretendard-ExtraBold.otf */; };
+		EEE574432B7B7A270040AC56 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE5743B2B7B7A270040AC56 /* Pretendard-Medium.otf */; };
+		EEE574442B7B7A270040AC56 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE5743C2B7B7A270040AC56 /* Pretendard-Thin.otf */; };
+		EEE574452B7B7A270040AC56 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE5743D2B7B7A270040AC56 /* Pretendard-Bold.otf */; };
+		EEE5744F2B7B7AAC0040AC56 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574492B7B7AAC0040AC56 /* String+.swift */; };
+		EEE574502B7B7AAC0040AC56 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5744A2B7B7AAC0040AC56 /* UIFont+.swift */; };
+		EEE574512B7B7AAC0040AC56 /* UIRectEdge+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5744B2B7B7AAC0040AC56 /* UIRectEdge+.swift */; };
+		EEE574522B7B7AAC0040AC56 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5744C2B7B7AAC0040AC56 /* UIView+.swift */; };
+		EEE574532B7B7AAC0040AC56 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5744D2B7B7AAC0040AC56 /* UIViewController+.swift */; };
+		EEE574542B7B7AAC0040AC56 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5744E2B7B7AAC0040AC56 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +42,22 @@
 		EEE5741E2B7B76240040AC56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEE574212B7B76240040AC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEE574232B7B76240040AC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEE5742E2B7B79970040AC56 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		EEE574302B7B79AB0040AC56 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		EEE574362B7B7A260040AC56 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		EEE574372B7B7A260040AC56 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		EEE574382B7B7A270040AC56 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		EEE574392B7B7A270040AC56 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		EEE5743A2B7B7A270040AC56 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		EEE5743B2B7B7A270040AC56 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		EEE5743C2B7B7A270040AC56 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		EEE5743D2B7B7A270040AC56 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		EEE574492B7B7AAC0040AC56 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		EEE5744A2B7B7AAC0040AC56 /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		EEE5744B2B7B7AAC0040AC56 /* UIRectEdge+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRectEdge+.swift"; sourceTree = "<group>"; };
+		EEE5744C2B7B7AAC0040AC56 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		EEE5744D2B7B7AAC0040AC56 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		EEE5744E2B7B7AAC0040AC56 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +110,11 @@
 		EEE574142B7B76220040AC56 /* Treehouse */ = {
 			isa = PBXGroup;
 			children = (
+				EEE574462B7B7A610040AC56 /* Utils */,
+				EEE574342B7B79D30040AC56 /* Resources */,
+				EEE5742B2B7B793B0040AC56 /* Scenes */,
 				EEE574292B7B78D60040AC56 /* App */,
 				EEE574192B7B76220040AC56 /* ViewController.swift */,
-				EEE5741E2B7B76240040AC56 /* Assets.xcassets */,
-				EEE574202B7B76240040AC56 /* LaunchScreen.storyboard */,
-				EEE574232B7B76240040AC56 /* Info.plist */,
 			);
 			path = Treehouse;
 			sourceTree = "<group>";
@@ -94,6 +126,78 @@
 				EEE574172B7B76220040AC56 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		EEE5742B2B7B793B0040AC56 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EEE5742C2B7B79450040AC56 /* FeedScenes */,
+				EEE574302B7B79AB0040AC56 /* MainTabBarViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EEE5742C2B7B79450040AC56 /* FeedScenes */ = {
+			isa = PBXGroup;
+			children = (
+				EEE5742D2B7B79630040AC56 /* Components */,
+				EEE5742E2B7B79970040AC56 /* FeedViewController.swift */,
+			);
+			path = FeedScenes;
+			sourceTree = "<group>";
+		};
+		EEE5742D2B7B79630040AC56 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EEE574342B7B79D30040AC56 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EEE574352B7B79F60040AC56 /* Fonts */,
+				EEE5741E2B7B76240040AC56 /* Assets.xcassets */,
+				EEE574232B7B76240040AC56 /* Info.plist */,
+				EEE574202B7B76240040AC56 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EEE574352B7B79F60040AC56 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EEE5743D2B7B7A270040AC56 /* Pretendard-Bold.otf */,
+				EEE5743A2B7B7A270040AC56 /* Pretendard-ExtraBold.otf */,
+				EEE574392B7B7A270040AC56 /* Pretendard-ExtraLight.otf */,
+				EEE574372B7B7A260040AC56 /* Pretendard-Light.otf */,
+				EEE5743B2B7B7A270040AC56 /* Pretendard-Medium.otf */,
+				EEE574362B7B7A260040AC56 /* Pretendard-Regular.otf */,
+				EEE574382B7B7A270040AC56 /* Pretendard-SemiBold.otf */,
+				EEE5743C2B7B7A270040AC56 /* Pretendard-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EEE574462B7B7A610040AC56 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EEE574482B7B7A760040AC56 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EEE574482B7B7A760040AC56 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EEE574492B7B7AAC0040AC56 /* String+.swift */,
+				EEE5744E2B7B7AAC0040AC56 /* UIColor+.swift */,
+				EEE5744A2B7B7AAC0040AC56 /* UIFont+.swift */,
+				EEE5744B2B7B7AAC0040AC56 /* UIRectEdge+.swift */,
+				EEE5744C2B7B7AAC0040AC56 /* UIView+.swift */,
+				EEE5744D2B7B7AAC0040AC56 /* UIViewController+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +260,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE574412B7B7A270040AC56 /* Pretendard-ExtraLight.otf in Resources */,
+				EEE574452B7B7A270040AC56 /* Pretendard-Bold.otf in Resources */,
 				EEE574222B7B76240040AC56 /* LaunchScreen.storyboard in Resources */,
+				EEE574422B7B7A270040AC56 /* Pretendard-ExtraBold.otf in Resources */,
+				EEE574442B7B7A270040AC56 /* Pretendard-Thin.otf in Resources */,
+				EEE574432B7B7A270040AC56 /* Pretendard-Medium.otf in Resources */,
+				EEE5743F2B7B7A270040AC56 /* Pretendard-Light.otf in Resources */,
+				EEE574402B7B7A270040AC56 /* Pretendard-SemiBold.otf in Resources */,
+				EEE5743E2B7B7A270040AC56 /* Pretendard-Regular.otf in Resources */,
 				EEE5741F2B7B76240040AC56 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,8 +322,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE574512B7B7AAC0040AC56 /* UIRectEdge+.swift in Sources */,
+				EEE574312B7B79AB0040AC56 /* MainTabBarViewController.swift in Sources */,
+				EEE574532B7B7AAC0040AC56 /* UIViewController+.swift in Sources */,
 				EEE5741A2B7B76220040AC56 /* ViewController.swift in Sources */,
+				EEE574542B7B7AAC0040AC56 /* UIColor+.swift in Sources */,
 				EEE574162B7B76220040AC56 /* AppDelegate.swift in Sources */,
+				EEE574502B7B7AAC0040AC56 /* UIFont+.swift in Sources */,
+				EEE5742F2B7B79970040AC56 /* FeedViewController.swift in Sources */,
+				EEE574522B7B7AAC0040AC56 /* UIView+.swift in Sources */,
+				EEE5744F2B7B7AAC0040AC56 /* String+.swift in Sources */,
 				EEE574182B7B76220040AC56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
