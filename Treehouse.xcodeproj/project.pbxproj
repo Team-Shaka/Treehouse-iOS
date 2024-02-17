@@ -29,6 +29,13 @@
 		EEE574522B7B7AAC0040AC56 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5744C2B7B7AAC0040AC56 /* UIView+.swift */; };
 		EEE574532B7B7AAC0040AC56 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5744D2B7B7AAC0040AC56 /* UIViewController+.swift */; };
 		EEE574542B7B7AAC0040AC56 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5744E2B7B7AAC0040AC56 /* UIColor+.swift */; };
+		EEE574572B7B7C300040AC56 /* TreehouseImageCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574562B7B7C300040AC56 /* TreehouseImageCollection.swift */; };
+		EEE5745D2B7BA21F0040AC56 /* BranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5745C2B7BA21F0040AC56 /* BranchViewController.swift */; };
+		EEE574602B7BA2C10040AC56 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5745F2B7BA2C10040AC56 /* NotificationViewController.swift */; };
+		EEE574632B7BA39D0040AC56 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574622B7BA39D0040AC56 /* SettingViewController.swift */; };
+		EEE574692B7BA5050040AC56 /* WritePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574682B7BA5050040AC56 /* WritePostTableViewCell.swift */; };
+		EEE5746B2B7BA50C0040AC56 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5746A2B7BA50C0040AC56 /* PostTableViewCell.swift */; };
+		EEE5746D2B7BA97C0040AC56 /* TreehallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5746C2B7BA97C0040AC56 /* TreehallTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +65,13 @@
 		EEE5744C2B7B7AAC0040AC56 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		EEE5744D2B7B7AAC0040AC56 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		EEE5744E2B7B7AAC0040AC56 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		EEE574562B7B7C300040AC56 /* TreehouseImageCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehouseImageCollection.swift; sourceTree = "<group>"; };
+		EEE5745C2B7BA21F0040AC56 /* BranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchViewController.swift; sourceTree = "<group>"; };
+		EEE5745F2B7BA2C10040AC56 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		EEE574622B7BA39D0040AC56 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		EEE574682B7BA5050040AC56 /* WritePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePostTableViewCell.swift; sourceTree = "<group>"; };
+		EEE5746A2B7BA50C0040AC56 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		EEE5746C2B7BA97C0040AC56 /* TreehallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehallTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +124,11 @@
 		EEE574142B7B76220040AC56 /* Treehouse */ = {
 			isa = PBXGroup;
 			children = (
-				EEE574462B7B7A610040AC56 /* Utils */,
+				EEE574232B7B76240040AC56 /* Info.plist */,
+				EEE574292B7B78D60040AC56 /* App */,
 				EEE574342B7B79D30040AC56 /* Resources */,
 				EEE5742B2B7B793B0040AC56 /* Scenes */,
-				EEE574292B7B78D60040AC56 /* App */,
+				EEE574462B7B7A610040AC56 /* Utils */,
 				EEE574192B7B76220040AC56 /* ViewController.swift */,
 			);
 			path = Treehouse;
@@ -131,6 +146,9 @@
 		EEE5742B2B7B793B0040AC56 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EEE574612B7BA38F0040AC56 /* SettingScenes */,
+				EEE5745E2B7BA2B50040AC56 /* NotificationScenes */,
+				EEE5745B2B7BA20F0040AC56 /* BranchScenes */,
 				EEE5742C2B7B79450040AC56 /* FeedScenes */,
 				EEE574302B7B79AB0040AC56 /* MainTabBarViewController.swift */,
 			);
@@ -149,6 +167,9 @@
 		EEE5742D2B7B79630040AC56 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EEE574682B7BA5050040AC56 /* WritePostTableViewCell.swift */,
+				EEE5746A2B7BA50C0040AC56 /* PostTableViewCell.swift */,
+				EEE5746C2B7BA97C0040AC56 /* TreehallTableViewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -158,7 +179,6 @@
 			children = (
 				EEE574352B7B79F60040AC56 /* Fonts */,
 				EEE5741E2B7B76240040AC56 /* Assets.xcassets */,
-				EEE574232B7B76240040AC56 /* Info.plist */,
 				EEE574202B7B76240040AC56 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -182,6 +202,7 @@
 		EEE574462B7B7A610040AC56 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EEE574552B7B7C1E0040AC56 /* TreehouseCollections */,
 				EEE574482B7B7A760040AC56 /* Extensions */,
 			);
 			path = Utils;
@@ -198,6 +219,38 @@
 				EEE5744D2B7B7AAC0040AC56 /* UIViewController+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EEE574552B7B7C1E0040AC56 /* TreehouseCollections */ = {
+			isa = PBXGroup;
+			children = (
+				EEE574562B7B7C300040AC56 /* TreehouseImageCollection.swift */,
+			);
+			path = TreehouseCollections;
+			sourceTree = "<group>";
+		};
+		EEE5745B2B7BA20F0040AC56 /* BranchScenes */ = {
+			isa = PBXGroup;
+			children = (
+				EEE5745C2B7BA21F0040AC56 /* BranchViewController.swift */,
+			);
+			path = BranchScenes;
+			sourceTree = "<group>";
+		};
+		EEE5745E2B7BA2B50040AC56 /* NotificationScenes */ = {
+			isa = PBXGroup;
+			children = (
+				EEE5745F2B7BA2C10040AC56 /* NotificationViewController.swift */,
+			);
+			path = NotificationScenes;
+			sourceTree = "<group>";
+		};
+		EEE574612B7BA38F0040AC56 /* SettingScenes */ = {
+			isa = PBXGroup;
+			children = (
+				EEE574622B7BA39D0040AC56 /* SettingViewController.swift */,
+			);
+			path = SettingScenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,14 +378,21 @@
 				EEE574512B7B7AAC0040AC56 /* UIRectEdge+.swift in Sources */,
 				EEE574312B7B79AB0040AC56 /* MainTabBarViewController.swift in Sources */,
 				EEE574532B7B7AAC0040AC56 /* UIViewController+.swift in Sources */,
+				EEE574692B7BA5050040AC56 /* WritePostTableViewCell.swift in Sources */,
 				EEE5741A2B7B76220040AC56 /* ViewController.swift in Sources */,
+				EEE5745D2B7BA21F0040AC56 /* BranchViewController.swift in Sources */,
+				EEE574632B7BA39D0040AC56 /* SettingViewController.swift in Sources */,
 				EEE574542B7B7AAC0040AC56 /* UIColor+.swift in Sources */,
+				EEE5746D2B7BA97C0040AC56 /* TreehallTableViewCell.swift in Sources */,
 				EEE574162B7B76220040AC56 /* AppDelegate.swift in Sources */,
 				EEE574502B7B7AAC0040AC56 /* UIFont+.swift in Sources */,
 				EEE5742F2B7B79970040AC56 /* FeedViewController.swift in Sources */,
+				EEE574572B7B7C300040AC56 /* TreehouseImageCollection.swift in Sources */,
+				EEE574602B7BA2C10040AC56 /* NotificationViewController.swift in Sources */,
 				EEE574522B7B7AAC0040AC56 /* UIView+.swift in Sources */,
 				EEE5744F2B7B7AAC0040AC56 /* String+.swift in Sources */,
 				EEE574182B7B76220040AC56 /* SceneDelegate.swift in Sources */,
+				EEE5746B2B7BA50C0040AC56 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
