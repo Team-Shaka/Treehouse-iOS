@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tabBarIcon_branch_normal.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
