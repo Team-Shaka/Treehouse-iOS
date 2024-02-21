@@ -17,6 +17,29 @@ extension UIView {
         self.clipsToBounds = true
         self.layer.maskedCorners = CACornerMask(edge?.options ?? [])
     }
+    
+    func setGradient(color1: UIColor, color2: UIColor) {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = [color1.cgColor, color2.cgColor]
+        gradient.locations = [0.0 , 1.0]
+
+        gradient.startPoint = CGPoint(x: 0.25, y: 0.5)
+        gradient.endPoint = CGPoint(x: 0.75, y: 0.5)
+
+        gradient.frame = self.bounds
+        layer.addSublayer(gradient)
+    }
+    
+    func addGradientLayer(firstColor: UIColor, secondColor: UIColor){
+        clipsToBounds = true
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [firstColor.cgColor, secondColor.cgColor]
+        gradientLayer.frame = self.bounds
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
+        
 }
 
 extension CALayer {
