@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0F8CCF1DCC2B99D5CFEDC5F6 /* Pods_Treehouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F59C4AFD5E752911CF7F58 /* Pods_Treehouse.framework */; };
+		EEA6FB0E2B86601300C8CBD6 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB0D2B86601300C8CBD6 /* FeedData.swift */; };
+		EEA6FB102B86603600C8CBD6 /* TreehouseNetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB0F2B86603600C8CBD6 /* TreehouseNetworkResult.swift */; };
+		EEA6FB122B8662A900C8CBD6 /* PostDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB112B8662A900C8CBD6 /* PostDetailData.swift */; };
+		EEA6FB142B86630200C8CBD6 /* ReactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB132B86630200C8CBD6 /* ReactionData.swift */; };
+		EEA6FB162B86647B00C8CBD6 /* CommentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB152B86647B00C8CBD6 /* CommentData.swift */; };
 		EEE574162B7B76220040AC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574152B7B76220040AC56 /* AppDelegate.swift */; };
 		EEE574182B7B76220040AC56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574172B7B76220040AC56 /* SceneDelegate.swift */; };
-		EEE5741A2B7B76220040AC56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574192B7B76220040AC56 /* ViewController.swift */; };
 		EEE5741F2B7B76240040AC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEE5741E2B7B76240040AC56 /* Assets.xcassets */; };
 		EEE574222B7B76240040AC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEE574202B7B76240040AC56 /* LaunchScreen.storyboard */; };
 		EEE5742F2B7B79970040AC56 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5742E2B7B79970040AC56 /* FeedViewController.swift */; };
@@ -42,10 +46,14 @@
 		30B6CDE18EEEC0789A875EF4 /* Pods-Treehouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treehouse.release.xcconfig"; path = "Target Support Files/Pods-Treehouse/Pods-Treehouse.release.xcconfig"; sourceTree = "<group>"; };
 		6D33CFFDE48C2206AC071F72 /* Pods-Treehouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treehouse.debug.xcconfig"; path = "Target Support Files/Pods-Treehouse/Pods-Treehouse.debug.xcconfig"; sourceTree = "<group>"; };
 		80F59C4AFD5E752911CF7F58 /* Pods_Treehouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treehouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEA6FB0D2B86601300C8CBD6 /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
+		EEA6FB0F2B86603600C8CBD6 /* TreehouseNetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehouseNetworkResult.swift; sourceTree = "<group>"; };
+		EEA6FB112B8662A900C8CBD6 /* PostDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailData.swift; sourceTree = "<group>"; };
+		EEA6FB132B86630200C8CBD6 /* ReactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionData.swift; sourceTree = "<group>"; };
+		EEA6FB152B86647B00C8CBD6 /* CommentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentData.swift; sourceTree = "<group>"; };
 		EEE574122B7B76220040AC56 /* Treehouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treehouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE574152B7B76220040AC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEE574172B7B76220040AC56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EEE574192B7B76220040AC56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EEE5741E2B7B76240040AC56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEE574212B7B76240040AC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEE574232B7B76240040AC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +111,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EEA6FB0B2B865E4100C8CBD6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6FB0C2B865FCA00C8CBD6 /* Structure */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EEA6FB0C2B865FCA00C8CBD6 /* Structure */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6FB0F2B86603600C8CBD6 /* TreehouseNetworkResult.swift */,
+				EEA6FB0D2B86601300C8CBD6 /* FeedData.swift */,
+				EEA6FB112B8662A900C8CBD6 /* PostDetailData.swift */,
+				EEA6FB132B86630200C8CBD6 /* ReactionData.swift */,
+				EEA6FB152B86647B00C8CBD6 /* CommentData.swift */,
+			);
+			path = Structure;
+			sourceTree = "<group>";
+		};
 		EEE574092B7B76220040AC56 = {
 			isa = PBXGroup;
 			children = (
@@ -124,12 +152,11 @@
 		EEE574142B7B76220040AC56 /* Treehouse */ = {
 			isa = PBXGroup;
 			children = (
-				EEE574232B7B76240040AC56 /* Info.plist */,
+				EEA6FB0B2B865E4100C8CBD6 /* Models */,
 				EEE574292B7B78D60040AC56 /* App */,
-				EEE574342B7B79D30040AC56 /* Resources */,
 				EEE5742B2B7B793B0040AC56 /* Scenes */,
+				EEE574342B7B79D30040AC56 /* Resources */,
 				EEE574462B7B7A610040AC56 /* Utils */,
-				EEE574192B7B76220040AC56 /* ViewController.swift */,
 			);
 			path = Treehouse;
 			sourceTree = "<group>";
@@ -177,6 +204,7 @@
 		EEE574342B7B79D30040AC56 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EEE574232B7B76240040AC56 /* Info.plist */,
 				EEE574352B7B79F60040AC56 /* Fonts */,
 				EEE5741E2B7B76240040AC56 /* Assets.xcassets */,
 				EEE574202B7B76240040AC56 /* LaunchScreen.storyboard */,
@@ -377,9 +405,10 @@
 			files = (
 				EEE574512B7B7AAC0040AC56 /* UIRectEdge+.swift in Sources */,
 				EEE574312B7B79AB0040AC56 /* MainTabBarViewController.swift in Sources */,
+				EEA6FB102B86603600C8CBD6 /* TreehouseNetworkResult.swift in Sources */,
+				EEA6FB162B86647B00C8CBD6 /* CommentData.swift in Sources */,
 				EEE574532B7B7AAC0040AC56 /* UIViewController+.swift in Sources */,
 				EEE574692B7BA5050040AC56 /* WritePostTableViewCell.swift in Sources */,
-				EEE5741A2B7B76220040AC56 /* ViewController.swift in Sources */,
 				EEE5745D2B7BA21F0040AC56 /* BranchViewController.swift in Sources */,
 				EEE574632B7BA39D0040AC56 /* SettingViewController.swift in Sources */,
 				EEE574542B7B7AAC0040AC56 /* UIColor+.swift in Sources */,
@@ -389,8 +418,11 @@
 				EEE5742F2B7B79970040AC56 /* FeedViewController.swift in Sources */,
 				EEE574572B7B7C300040AC56 /* TreehouseImageCollection.swift in Sources */,
 				EEE574602B7BA2C10040AC56 /* NotificationViewController.swift in Sources */,
+				EEA6FB122B8662A900C8CBD6 /* PostDetailData.swift in Sources */,
 				EEE574522B7B7AAC0040AC56 /* UIView+.swift in Sources */,
 				EEE5744F2B7B7AAC0040AC56 /* String+.swift in Sources */,
+				EEA6FB0E2B86601300C8CBD6 /* FeedData.swift in Sources */,
+				EEA6FB142B86630200C8CBD6 /* ReactionData.swift in Sources */,
 				EEE574182B7B76220040AC56 /* SceneDelegate.swift in Sources */,
 				EEE5746B2B7BA50C0040AC56 /* PostTableViewCell.swift in Sources */,
 			);
@@ -539,7 +571,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UKZF3A6P2B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Treehouse/Info.plist;
+				INFOPLIST_FILE = Treehouse/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -569,7 +601,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UKZF3A6P2B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Treehouse/Info.plist;
+				INFOPLIST_FILE = Treehouse/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
