@@ -20,4 +20,5 @@ final class TreehouseImageCollection {
     static let tabBarIconSettingSelected: UIImage = #imageLiteral(resourceName: "tabBarIcon_setting_selected")
     
     static let changeTreehouse: UIImage = #imageLiteral(resourceName: "changeTreehouse")
+    static let addPicture: UIImage = #imageLiteral(resourceName: "addPicture")
 }
