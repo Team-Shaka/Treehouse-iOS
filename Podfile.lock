@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.0.5)
+  - FittedSheets (2.6.1)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0)
+  - FittedSheets (~> 2.6.1)
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - FittedSheets
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  FittedSheets: 37e35f105c531f3845075f1788dd8517a35315c4
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 411431ad4d87a9c342362a8725bd4694677fab89
+PODFILE CHECKSUM: a3334463c5bf4887a39dec81609c146c5f829036
 
 COCOAPODS: 1.13.0
