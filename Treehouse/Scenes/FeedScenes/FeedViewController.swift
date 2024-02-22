@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FittedSheets
 
 class FeedViewController: UIViewController {
     
@@ -33,6 +34,7 @@ class FeedViewController: UIViewController {
     private lazy var changeTreehouseButton: UIButton = {
         let button = UIButton()
         button.setImage(TreehouseImageCollection.changeTreehouse, for: .normal)
+        button.addTarget(self, action: #selector(changeTreehouseButtonTapped), for: .touchUpInside)
         //        button.setTitle("트리하우스 변경", for: .normal)
         //        button.setTitleColor(.black, for: .normal)
         //        button.titleLabel?.font = .pretendard(size: 8)
@@ -61,6 +63,10 @@ class FeedViewController: UIViewController {
         self.view.setNeedsLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     private func configure() {
         self.feedTableView.delegate = self
         self.feedTableView.dataSource = self
@@ -78,7 +84,7 @@ class FeedViewController: UIViewController {
     
     private func makeConstraint() {
         topView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(56)
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(60)
         }
@@ -97,10 +103,11 @@ class FeedViewController: UIViewController {
         }
         
         changeTreehouseButton.snp.makeConstraints{ make in
-            make.centerY.equalTo(treehouseImageView)
+            make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(16)
-            make.leading.greaterThanOrEqualTo(treehouseNameLabel.snp.trailing)
-            make.height.equalTo(changeTreehouseButton.snp.width).multipliedBy(48/32)
+//            make.leading.greaterThanOrEqualTo(treehouseNameLabel.snp.trailing)
+            make.height.equalTo(treehouseImageView)
+            make.width.equalTo(changeTreehouseButton.snp.height)
         }
         
         feedTableView.snp.makeConstraints{ make in
@@ -117,6 +124,8 @@ class FeedViewController: UIViewController {
     private func fetchFeeds() {
         TreehouseNetworkManager.shared.fetchFeed(treeId: 1) { [weak self] value, error in
             guard let self = self else { return }
+            self.posts = value?.posts ?? []
+            print(value, error)
             self.posts = value ?? []
             self.posts = [PostData(profileImageUrl: value?.first?.profileImageUrl ?? "",
                                    memberName: "Testing1", createdAt: "", content: "Changing the translatesAutoresizingMaskIntoConstraints property of the contentView of a UITableViewCell is not supported and will result in undefined behavior, as this property is managed by the owning UITableViewCell. Cell: <Treehouse.PostTableViewCell: 0x10788ac00; baseClass = UITableViewCell; frame = (0 0; 320 44); backgroundColor = UIExtendedGrayColorSpace 0 0; layer = <CALayer: 0x60000027b7c0>>",
@@ -129,6 +138,18 @@ class FeedViewController: UIViewController {
                                                  postImageUrls: [], reactions: [], commentCount: 14)]
             self.feedTableView.reloadData()
         }
+    }
+    
+    @objc func changeTreehouseButtonTapped() {
+        let treehouseSelectionBottomSheetViewController = TreehouseSelectionBottomSheetViewController()
+        let sheetController = SheetViewController(controller: treehouseSelectionBottomSheetViewController, sizes: [ .percent(0.5) , .fullscreen ])
+        sheetController.dismissOnPull = true
+        sheetController.overlayColor = .trDimGray
+        sheetController.minimumSpaceAbovePullBar = 50
+        sheetController.gripSize = CGSize(width: 89, height: 3)
+        sheetController.gripColor = .trPrimaryGray
+        sheetController.cornerRadius = 30
+        self.present(sheetController, animated: true, completion: nil)
     }
 }
 
