@@ -125,12 +125,13 @@ class PostTableViewCell: UITableViewCell {
         
         userNameLabel.snp.makeConstraints { make in
             make.top.leading.equalToSuperview()
+            make.height.equalTo(20)
         }
         
         branchAndDateLabel.snp.makeConstraints { make in
-            make.trailing.equalTo(postSettingButton.snp.leading)
-            make.centerY.equalTo(userNameLabel)
             make.leading.equalTo(userNameLabel.snp.trailing).offset(4)
+            make.trailing.lessThanOrEqualTo(postSettingButton.snp.leading).inset(-8)
+            make.centerY.equalTo(userNameLabel)
         }
         
         postSettingButton.snp.makeConstraints { make in
@@ -140,7 +141,7 @@ class PostTableViewCell: UITableViewCell {
         }
         
         contentLabel.snp.makeConstraints { make in
-            make.top.equalTo(userNameLabel.snp.bottom).offset(14)
+            make.top.equalTo(userNameLabel.snp.bottom).offset(6)
             make.leading.trailing.equalToSuperview()
         }
         

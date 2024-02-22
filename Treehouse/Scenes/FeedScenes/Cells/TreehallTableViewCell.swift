@@ -99,7 +99,7 @@ class TreehallTableViewCell: UITableViewCell {
         mainContainerView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(14)
             make.top.equalToSuperview().offset(8)
-            make.height.equalTo(80)
+            
             make.bottom.equalToSuperview().inset(8)
             make.bottom.equalTo(member1ImageView).offset(14)
         }
