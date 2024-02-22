@@ -13,6 +13,18 @@
 		EEA6FB122B8662A900C8CBD6 /* PostDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB112B8662A900C8CBD6 /* PostDetailData.swift */; };
 		EEA6FB142B86630200C8CBD6 /* ReactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB132B86630200C8CBD6 /* ReactionData.swift */; };
 		EEA6FB162B86647B00C8CBD6 /* CommentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB152B86647B00C8CBD6 /* CommentData.swift */; };
+		EEA6FB192B86654200C8CBD6 /* TreehouseNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB182B86654200C8CBD6 /* TreehouseNetworkManager.swift */; };
+		EEA6FB1D2B86659500C8CBD6 /* TRHNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB1C2B86659500C8CBD6 /* TRHNetworkManager.swift */; };
+		EEA6FB1F2B8665F200C8CBD6 /* TRHURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB1E2B8665F200C8CBD6 /* TRHURLRequest.swift */; };
+		EEA6FB212B8667CC00C8CBD6 /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB202B8667CC00C8CBD6 /* Dictionary+.swift */; };
+		EEA6FB232B86699000C8CBD6 /* TRHNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB222B86699000C8CBD6 /* TRHNetworkError.swift */; };
+		EEA6FB262B866B3200C8CBD6 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB252B866B3200C8CBD6 /* UserDefaultsWrapper.swift */; };
+		EEA6FB282B866B3E00C8CBD6 /* UserDefaultsWrapperKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB272B866B3E00C8CBD6 /* UserDefaultsWrapperKey.swift */; };
+		EEA6FB2A2B866B7200C8CBD6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB292B866B7200C8CBD6 /* User.swift */; };
+		EEA6FB2D2B866C8500C8CBD6 /* TreehouseURLContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB2C2B866C8500C8CBD6 /* TreehouseURLContainer.swift */; };
+		EEA6FB302B866D6000C8CBD6 /* url.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA6FB2F2B866D6000C8CBD6 /* url.plist */; };
+		EEA6FB322B866D7700C8CBD6 /* url-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA6FB312B866D7700C8CBD6 /* url-debug.plist */; };
+		EEA6FB342B866DE000C8CBD6 /* TreehouseNetworkURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB332B866DE000C8CBD6 /* TreehouseNetworkURLRequest.swift */; };
 		EEE574162B7B76220040AC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574152B7B76220040AC56 /* AppDelegate.swift */; };
 		EEE574182B7B76220040AC56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574172B7B76220040AC56 /* SceneDelegate.swift */; };
 		EEE5741F2B7B76240040AC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEE5741E2B7B76240040AC56 /* Assets.xcassets */; };
@@ -51,6 +63,18 @@
 		EEA6FB112B8662A900C8CBD6 /* PostDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailData.swift; sourceTree = "<group>"; };
 		EEA6FB132B86630200C8CBD6 /* ReactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionData.swift; sourceTree = "<group>"; };
 		EEA6FB152B86647B00C8CBD6 /* CommentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentData.swift; sourceTree = "<group>"; };
+		EEA6FB182B86654200C8CBD6 /* TreehouseNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehouseNetworkManager.swift; sourceTree = "<group>"; };
+		EEA6FB1C2B86659500C8CBD6 /* TRHNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRHNetworkManager.swift; sourceTree = "<group>"; };
+		EEA6FB1E2B8665F200C8CBD6 /* TRHURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRHURLRequest.swift; sourceTree = "<group>"; };
+		EEA6FB202B8667CC00C8CBD6 /* Dictionary+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+.swift"; sourceTree = "<group>"; };
+		EEA6FB222B86699000C8CBD6 /* TRHNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRHNetworkError.swift; sourceTree = "<group>"; };
+		EEA6FB252B866B3200C8CBD6 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		EEA6FB272B866B3E00C8CBD6 /* UserDefaultsWrapperKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapperKey.swift; sourceTree = "<group>"; };
+		EEA6FB292B866B7200C8CBD6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EEA6FB2C2B866C8500C8CBD6 /* TreehouseURLContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehouseURLContainer.swift; sourceTree = "<group>"; };
+		EEA6FB2F2B866D6000C8CBD6 /* url.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = url.plist; sourceTree = "<group>"; };
+		EEA6FB312B866D7700C8CBD6 /* url-debug.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "url-debug.plist"; sourceTree = "<group>"; };
+		EEA6FB332B866DE000C8CBD6 /* TreehouseNetworkURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehouseNetworkURLRequest.swift; sourceTree = "<group>"; };
 		EEE574122B7B76220040AC56 /* Treehouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treehouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE574152B7B76220040AC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEE574172B7B76220040AC56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +138,7 @@
 		EEA6FB0B2B865E4100C8CBD6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EEA6FB1A2B86656800C8CBD6 /* Network */,
 				EEA6FB0C2B865FCA00C8CBD6 /* Structure */,
 			);
 			path = Models;
@@ -127,8 +152,63 @@
 				EEA6FB112B8662A900C8CBD6 /* PostDetailData.swift */,
 				EEA6FB132B86630200C8CBD6 /* ReactionData.swift */,
 				EEA6FB152B86647B00C8CBD6 /* CommentData.swift */,
+				EEA6FB292B866B7200C8CBD6 /* User.swift */,
 			);
 			path = Structure;
+			sourceTree = "<group>";
+		};
+		EEA6FB172B86653500C8CBD6 /* Treehouse */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6FB182B86654200C8CBD6 /* TreehouseNetworkManager.swift */,
+				EEA6FB332B866DE000C8CBD6 /* TreehouseNetworkURLRequest.swift */,
+			);
+			path = Treehouse;
+			sourceTree = "<group>";
+		};
+		EEA6FB1A2B86656800C8CBD6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6FB1B2B86658500C8CBD6 /* protocols */,
+				EEA6FB172B86653500C8CBD6 /* Treehouse */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EEA6FB1B2B86658500C8CBD6 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6FB1C2B86659500C8CBD6 /* TRHNetworkManager.swift */,
+				EEA6FB1E2B8665F200C8CBD6 /* TRHURLRequest.swift */,
+				EEA6FB222B86699000C8CBD6 /* TRHNetworkError.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		EEA6FB242B866B2300C8CBD6 /* UserDefaultsWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6FB252B866B3200C8CBD6 /* UserDefaultsWrapper.swift */,
+				EEA6FB272B866B3E00C8CBD6 /* UserDefaultsWrapperKey.swift */,
+			);
+			path = UserDefaultsWrapper;
+			sourceTree = "<group>";
+		};
+		EEA6FB2B2B866C6A00C8CBD6 /* PropertyListContainer */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6FB2C2B866C8500C8CBD6 /* TreehouseURLContainer.swift */,
+			);
+			path = PropertyListContainer;
+			sourceTree = "<group>";
+		};
+		EEA6FB2E2B866D4400C8CBD6 /* propertyList */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6FB2F2B866D6000C8CBD6 /* url.plist */,
+				EEA6FB312B866D7700C8CBD6 /* url-debug.plist */,
+			);
+			path = propertyList;
 			sourceTree = "<group>";
 		};
 		EEE574092B7B76220040AC56 = {
@@ -204,6 +284,7 @@
 		EEE574342B7B79D30040AC56 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EEA6FB2E2B866D4400C8CBD6 /* propertyList */,
 				EEE574232B7B76240040AC56 /* Info.plist */,
 				EEE574352B7B79F60040AC56 /* Fonts */,
 				EEE5741E2B7B76240040AC56 /* Assets.xcassets */,
@@ -230,6 +311,8 @@
 		EEE574462B7B7A610040AC56 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EEA6FB2B2B866C6A00C8CBD6 /* PropertyListContainer */,
+				EEA6FB242B866B2300C8CBD6 /* UserDefaultsWrapper */,
 				EEE574552B7B7C1E0040AC56 /* TreehouseCollections */,
 				EEE574482B7B7A760040AC56 /* Extensions */,
 			);
@@ -245,6 +328,7 @@
 				EEE5744B2B7B7AAC0040AC56 /* UIRectEdge+.swift */,
 				EEE5744C2B7B7AAC0040AC56 /* UIView+.swift */,
 				EEE5744D2B7B7AAC0040AC56 /* UIViewController+.swift */,
+				EEA6FB202B8667CC00C8CBD6 /* Dictionary+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,12 +429,14 @@
 				EEE574452B7B7A270040AC56 /* Pretendard-Bold.otf in Resources */,
 				EEE574222B7B76240040AC56 /* LaunchScreen.storyboard in Resources */,
 				EEE574422B7B7A270040AC56 /* Pretendard-ExtraBold.otf in Resources */,
+				EEA6FB322B866D7700C8CBD6 /* url-debug.plist in Resources */,
 				EEE574442B7B7A270040AC56 /* Pretendard-Thin.otf in Resources */,
 				EEE574432B7B7A270040AC56 /* Pretendard-Medium.otf in Resources */,
 				EEE5743F2B7B7A270040AC56 /* Pretendard-Light.otf in Resources */,
 				EEE574402B7B7A270040AC56 /* Pretendard-SemiBold.otf in Resources */,
 				EEE5743E2B7B7A270040AC56 /* Pretendard-Regular.otf in Resources */,
 				EEE5741F2B7B76240040AC56 /* Assets.xcassets in Resources */,
+				EEA6FB302B866D6000C8CBD6 /* url.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,18 +489,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEA6FB262B866B3200C8CBD6 /* UserDefaultsWrapper.swift in Sources */,
 				EEE574512B7B7AAC0040AC56 /* UIRectEdge+.swift in Sources */,
 				EEE574312B7B79AB0040AC56 /* MainTabBarViewController.swift in Sources */,
 				EEA6FB102B86603600C8CBD6 /* TreehouseNetworkResult.swift in Sources */,
 				EEA6FB162B86647B00C8CBD6 /* CommentData.swift in Sources */,
+				EEA6FB232B86699000C8CBD6 /* TRHNetworkError.swift in Sources */,
 				EEE574532B7B7AAC0040AC56 /* UIViewController+.swift in Sources */,
+				EEA6FB1D2B86659500C8CBD6 /* TRHNetworkManager.swift in Sources */,
+				EEA6FB2A2B866B7200C8CBD6 /* User.swift in Sources */,
 				EEE574692B7BA5050040AC56 /* WritePostTableViewCell.swift in Sources */,
+				EEA6FB342B866DE000C8CBD6 /* TreehouseNetworkURLRequest.swift in Sources */,
 				EEE5745D2B7BA21F0040AC56 /* BranchViewController.swift in Sources */,
 				EEE574632B7BA39D0040AC56 /* SettingViewController.swift in Sources */,
+				EEA6FB212B8667CC00C8CBD6 /* Dictionary+.swift in Sources */,
+				EEA6FB2D2B866C8500C8CBD6 /* TreehouseURLContainer.swift in Sources */,
 				EEE574542B7B7AAC0040AC56 /* UIColor+.swift in Sources */,
+				EEA6FB1F2B8665F200C8CBD6 /* TRHURLRequest.swift in Sources */,
 				EEE5746D2B7BA97C0040AC56 /* TreehallTableViewCell.swift in Sources */,
 				EEE574162B7B76220040AC56 /* AppDelegate.swift in Sources */,
 				EEE574502B7B7AAC0040AC56 /* UIFont+.swift in Sources */,
+				EEA6FB282B866B3E00C8CBD6 /* UserDefaultsWrapperKey.swift in Sources */,
 				EEE5742F2B7B79970040AC56 /* FeedViewController.swift in Sources */,
 				EEE574572B7B7C300040AC56 /* TreehouseImageCollection.swift in Sources */,
 				EEE574602B7BA2C10040AC56 /* NotificationViewController.swift in Sources */,
@@ -425,6 +520,7 @@
 				EEA6FB142B86630200C8CBD6 /* ReactionData.swift in Sources */,
 				EEE574182B7B76220040AC56 /* SceneDelegate.swift in Sources */,
 				EEE5746B2B7BA50C0040AC56 /* PostTableViewCell.swift in Sources */,
+				EEA6FB192B86654200C8CBD6 /* TreehouseNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
