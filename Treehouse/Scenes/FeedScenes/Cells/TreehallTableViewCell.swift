@@ -97,10 +97,11 @@ class TreehallTableViewCell: UITableViewCell {
     
     func makeConstraints() {
         mainContainerView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(14)
-            make.trailing.equalToSuperview().inset(14)
+            make.leading.trailing.equalToSuperview().inset(14)
             make.top.equalToSuperview().offset(8)
+            make.height.equalTo(80)
             make.bottom.equalToSuperview().inset(8)
+            make.bottom.equalTo(member1ImageView).offset(14)
         }
         
         treeNameLabel.snp.makeConstraints{ make in

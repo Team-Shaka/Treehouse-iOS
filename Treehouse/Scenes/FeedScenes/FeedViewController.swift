@@ -9,18 +9,7 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
-    private var posts: [PostData] = [
-        PostData(profileImageUrl: "",
-                 memberName: "memberName",
-                 branchDegree: 10,
-                 createdAt: Date(),
-                 content: "hhihihihihi",
-                 postImageUrls: [],
-                 reactions: [.init(content: "HIHIHIIHIHIHIHi",
-                                   number: 5,
-                                   isPushed: true)],
-                 commentCount: 10)
-    ]
+    private var posts: [PostData] = []
     
     private var topView: UIView = {
         let view = UIView()
@@ -55,6 +44,7 @@ class FeedViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
+        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
     
@@ -127,8 +117,17 @@ class FeedViewController: UIViewController {
     private func fetchFeeds() {
         TreehouseNetworkManager.shared.fetchFeed(treeId: 1) { [weak self] value, error in
             guard let self = self else { return }
-            self.posts = value?.posts ?? []
-            print(value, error)
+            self.posts = value ?? []
+            self.posts = [PostData(profileImageUrl: value?.first?.profileImageUrl ?? "",
+                                   memberName: "Testing1", createdAt: "", content: "Changing the translatesAutoresizingMaskIntoConstraints property of the contentView of a UITableViewCell is not supported and will result in undefined behavior, as this property is managed by the owning UITableViewCell. Cell: <Treehouse.PostTableViewCell: 0x10788ac00; baseClass = UITableViewCell; frame = (0 0; 320 44); backgroundColor = UIExtendedGrayColorSpace 0 0; layer = <CALayer: 0x60000027b7c0>>",
+                                   postImageUrls: [], reactions: [], commentCount: 14),
+                          PostData(profileImageUrl: value?.first?.profileImageUrl ?? "",
+                                                 memberName: "Testing2", createdAt: "", content: "Testing",
+                                                 postImageUrls: [], reactions: [], commentCount: 14),
+                          PostData(profileImageUrl: value?.first?.profileImageUrl ?? "",
+                                                 memberName: "Testing3", createdAt: "", content: "asdjlkfjdfkalajdkfldsjafkadsfjlkadsfadklfjsdfkasdflkj",
+                                                 postImageUrls: [], reactions: [], commentCount: 14)]
+            self.feedTableView.reloadData()
         }
     }
 }
@@ -149,12 +148,11 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView,
-                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return switch indexPath.row {
         case 0: 112
-        case 1: 56
-        default: 56
+        case 1: 100
+        default: 200
         }
     }
 }

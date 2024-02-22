@@ -10,7 +10,12 @@ import Kingfisher
 
 class PostTableViewCell: UITableViewCell {
     static let identifier: String = String(describing: PostTableViewCell.self)
-    var post: PostData!
+    
+    var post: PostData! {
+        didSet {
+            update()
+        }
+    }
     
     private var mainContainerView: UIView = {
         let view = UIView()
@@ -27,32 +32,48 @@ class PostTableViewCell: UITableViewCell {
     
     private var userNameLabel: UILabel = {
         let label = UILabel()
-        
+        label.font = .pretendard(size: 16, weight: .semiBold)
+        label.textColor = .black
         return label
     }()
     
     private var branchAndDateLabel: UILabel = {
         let label = UILabel()
-        
+        label.font = .pretendard(size: 12)
+        label.textColor = .trSubTextGray
+        label.text = "Branch 2·하루 전"
         return label
+    }()
+    
+    private var postSettingButton: UIButton = {
+        var buttonConfiguration = UIButton.Configuration.plain()
+        buttonConfiguration.image = UIImage(systemName: "ellipsis")
+        buttonConfiguration.baseForegroundColor = .trSubTextGray
+        buttonConfiguration.setDefaultContentInsets()
+        let button = UIButton(configuration: buttonConfiguration)
+        return button
     }()
     
     private var contentContainerView: UIView = {
         let view = UIView()
-        
         return view
     }()
     
     private var contentLabel: UILabel = {
         let label = UILabel()
-        
+        label.textColor = .black
+        label.numberOfLines = 0
         return label
     }()
     
     private var contentImageView: UIImageView = {
         let imageView = UIImageView()
-        
         return imageView
+    }()
+    
+    private var commentCountView: CommentCountView = {
+        let commentCountView = CommentCountView(count: 0)
+        return commentCountView
     }()
     
     override init(style: UITableViewCell.CellStyle,
@@ -78,7 +99,9 @@ class PostTableViewCell: UITableViewCell {
                                       contentContainerView)
         contentContainerView.addSubviews(userNameLabel,
                                          branchAndDateLabel,
-                                         contentLabel)
+                                         postSettingButton,
+                                         contentLabel,
+                                         commentCountView)
     }
     
     func makeConstraints() {
@@ -86,6 +109,7 @@ class PostTableViewCell: UITableViewCell {
             make.top.leading.trailing.equalToSuperview().inset(16)
             make.bottom.greaterThanOrEqualTo(userImageView).priority(.high)
             make.bottom.equalTo(contentContainerView).offset(16)
+            make.bottom.equalTo(self.contentView).offset(10)
         }
         
         userImageView.snp.makeConstraints { make in
@@ -96,21 +120,42 @@ class PostTableViewCell: UITableViewCell {
         contentContainerView.snp.makeConstraints { make in
             make.top.trailing.equalToSuperview()
             make.leading.equalTo(userImageView.snp.trailing).offset(10)
+            make.bottom.equalTo(commentCountView)
         }
         
         userNameLabel.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview()
-            
+            make.top.leading.equalToSuperview()
         }
         
+        branchAndDateLabel.snp.makeConstraints { make in
+            make.trailing.equalTo(postSettingButton.snp.leading)
+            make.centerY.equalTo(userNameLabel)
+            make.leading.equalTo(userNameLabel.snp.trailing).offset(4)
+        }
+        
+        postSettingButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(10)
+            make.height.width.equalTo(18)
+            make.centerY.equalTo(userNameLabel)
+        }
+        
+        contentLabel.snp.makeConstraints { make in
+            make.top.equalTo(userNameLabel.snp.bottom).offset(14)
+            make.leading.trailing.equalToSuperview()
+        }
+        
+        commentCountView.snp.makeConstraints { make in
+            make.top.equalTo(contentLabel.snp.bottom).offset(12)
+            make.leading.trailing.equalToSuperview()
+        }
     }
     
-    func setPost(_ post: PostData) {
-        self.post = post
-        // let userImageUrlString = post.profil
-        let userImageUrlString = "https://live.staticflickr.com/65535/51734305911_f4541d7629_m.jpg"
-        guard let url = URL(string: userImageUrlString) else { return }
+    func update() {
+        guard let url = URL(string: post.profileImageUrl) else { return }
         self.userImageView.kf.setImage(with: url)
+        self.userNameLabel.text = post.memberName
+        self.contentLabel.text = post.content
+        self.commentCountView.count = post.commentCount
     }
 }
 
@@ -121,7 +166,7 @@ extension PostTableViewCell {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
-        cell.setPost(post)
+        cell.post = post
         return cell
     }
 }

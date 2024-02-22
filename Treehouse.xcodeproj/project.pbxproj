@@ -10,6 +10,8 @@
 		0F8CCF1DCC2B99D5CFEDC5F6 /* Pods_Treehouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F59C4AFD5E752911CF7F58 /* Pods_Treehouse.framework */; };
 		A5D239232B879F8000B89993 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D239222B879F8000B89993 /* Array+.swift */; };
 		A5D239252B87A1DE00B89993 /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D239242B87A1DE00B89993 /* UIViewPreview.swift */; };
+		A5D2392A2B87AEE400B89993 /* ReactionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D239292B87AEE400B89993 /* ReactionButton.swift */; };
+		A5D2392C2B87B23700B89993 /* CommentCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2392B2B87B23700B89993 /* CommentCountView.swift */; };
 		EEA6FB0E2B86601300C8CBD6 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB0D2B86601300C8CBD6 /* FeedData.swift */; };
 		EEA6FB102B86603600C8CBD6 /* TreehouseNetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB0F2B86603600C8CBD6 /* TreehouseNetworkResult.swift */; };
 		EEA6FB122B8662A900C8CBD6 /* PostDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB112B8662A900C8CBD6 /* PostDetailData.swift */; };
@@ -62,6 +64,8 @@
 		80F59C4AFD5E752911CF7F58 /* Pods_Treehouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treehouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D239222B879F8000B89993 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		A5D239242B87A1DE00B89993 /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
+		A5D239292B87AEE400B89993 /* ReactionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReactionButton.swift; path = Treehouse/Scenes/FeedScenes/Components/ReactionButton.swift; sourceTree = SOURCE_ROOT; };
+		A5D2392B2B87B23700B89993 /* CommentCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCountView.swift; sourceTree = "<group>"; };
 		EEA6FB0D2B86601300C8CBD6 /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
 		EEA6FB0F2B86603600C8CBD6 /* TreehouseNetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehouseNetworkResult.swift; sourceTree = "<group>"; };
 		EEA6FB112B8662A900C8CBD6 /* PostDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailData.swift; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 				30B6CDE18EEEC0789A875EF4 /* Pods-Treehouse.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A5D239262B87AEA800B89993 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A5D239292B87AEE400B89993 /* ReactionButton.swift */,
+				A5D2392B2B87B23700B89993 /* CommentCountView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		BCA835052F63266DF75CB08A /* Frameworks */ = {
@@ -269,6 +282,7 @@
 		EEE5742C2B7B79450040AC56 /* FeedScenes */ = {
 			isa = PBXGroup;
 			children = (
+				A5D239262B87AEA800B89993 /* Components */,
 				EEE5742D2B7B79630040AC56 /* Cells */,
 				EEE5742E2B7B79970040AC56 /* FeedViewController.swift */,
 			);
@@ -503,6 +517,7 @@
 				EEA6FB162B86647B00C8CBD6 /* CommentData.swift in Sources */,
 				EEA6FB232B86699000C8CBD6 /* TRHNetworkError.swift in Sources */,
 				EEE574532B7B7AAC0040AC56 /* UIViewController+.swift in Sources */,
+				A5D2392A2B87AEE400B89993 /* ReactionButton.swift in Sources */,
 				EEA6FB1D2B86659500C8CBD6 /* TRHNetworkManager.swift in Sources */,
 				EEA6FB2A2B866B7200C8CBD6 /* User.swift in Sources */,
 				EEE574692B7BA5050040AC56 /* WritePostTableViewCell.swift in Sources */,
@@ -514,6 +529,7 @@
 				EEA6FB2D2B866C8500C8CBD6 /* TreehouseURLContainer.swift in Sources */,
 				EEE574542B7B7AAC0040AC56 /* UIColor+.swift in Sources */,
 				EEA6FB1F2B8665F200C8CBD6 /* TRHURLRequest.swift in Sources */,
+				A5D2392C2B87B23700B89993 /* CommentCountView.swift in Sources */,
 				EEE5746D2B7BA97C0040AC56 /* TreehallTableViewCell.swift in Sources */,
 				EEE574162B7B76220040AC56 /* AppDelegate.swift in Sources */,
 				EEE574502B7B7AAC0040AC56 /* UIFont+.swift in Sources */,

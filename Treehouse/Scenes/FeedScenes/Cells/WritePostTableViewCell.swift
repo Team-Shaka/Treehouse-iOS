@@ -60,7 +60,10 @@ class WritePostTableViewCell: UITableViewCell {
     
     func makeConstraints() {
         mainContainerView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalToSuperview()
+            make.height.equalTo(56)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(self.contentView)
         }
         
         userImageView.snp.makeConstraints{ make in
