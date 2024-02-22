@@ -18,6 +18,11 @@ extension UIView {
         self.layer.maskedCorners = CACornerMask(edge?.options ?? [])
     }
     
+    func setCornerMask(masks: [CACornerMask]) {
+        self.clipsToBounds = true
+        self.layer.maskedCorners = CACornerMask(masks)
+    }
+    
     func setGradient(color1: UIColor, color2: UIColor) {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.colors = [color1.cgColor, color2.cgColor]
