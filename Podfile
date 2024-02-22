@@ -9,4 +9,5 @@ target 'Treehouse' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'Alamofire', '~> 5.0.0'
   pod 'FittedSheets', '~> 2.6.1'
+  pod 'Kingfisher', '~> 7.0'
 end

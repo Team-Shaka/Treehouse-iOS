@@ -11,14 +11,14 @@ struct TreehouseNetworkResult<T: Codable>: Codable {
     let isSuccess: Bool
     let code: String
     let message: String
-    let createdAt: Date
-    let result: T?
+    let createdAt: String
+    let data: T?
     
     enum CodingKeys: String, CodingKey {
         case isSuccess
         case code
         case message
-        case createdAt = "created_at"
-        case result
+        case createdAt
+        case data
     }
 }

@@ -40,7 +40,7 @@ extension TRHNetworkManager {
                                                                     message: networkResult.message))
                         return
                     }
-                    completion(networkResult.result, response.error)
+                    completion(networkResult.data, response.error)
                 } catch {
                     print(#function, error)
                     completion(nil, error)

@@ -138,3 +138,13 @@ class TreehallTableViewCell: UITableViewCell {
         }
     }
 }
+
+extension TreehallTableViewCell {
+    static func makeCell(_ tableView: UITableView) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TreehallTableViewCell.identifier) as? TreehallTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.selectionStyle = .none
+        return cell
+    }
+}

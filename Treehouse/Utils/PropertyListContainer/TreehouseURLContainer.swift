@@ -26,7 +26,6 @@ final class TreehouseURLContainer {
         guard let urlDictionary = NSDictionary(contentsOf: fileUrl) else { fatalError("DOSEN'T EXIST URL KEY") }
         guard let urlString = urlDictionary[key.rawValue] as? String else { fatalError("COULDN'T CONVERT TO STRING") }
         guard let url = URL(string: urlString) else { fatalError("COULDN'T CREATE URL") }
-
         return url
     }
     

@@ -82,3 +82,13 @@ class WritePostTableViewCell: UITableViewCell {
         }
     }
 }
+
+extension WritePostTableViewCell {
+    static func makeCell(_ tableView: UITableView) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: WritePostTableViewCell.identifier) as? WritePostTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.selectionStyle = .none
+        return cell
+    }
+}

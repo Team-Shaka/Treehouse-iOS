@@ -10,7 +10,10 @@ import Alamofire
 
 final class TreehouseNetworkManager: TRHNetworkManager {
     static let shared: TreehouseNetworkManager = TreehouseNetworkManager()
-    private init() { }
+    private init() { 
+        
+        self.user = User(userId: 1, accessToken: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNZW1iZXIxIiwiZXhwIjoxNzA5ODIzNTY3LCJpYXQiOjE3MDg2MTM5Njd9.0YcirKzIdfyEIhlgVkw9spcnQgHj0ldBAnWiGUWj3-Y'", refreshToken: "")
+    }
     
     @UserDefaultWrapper(key: .member, defaultValue: nil)
     var user: User?
@@ -18,7 +21,7 @@ final class TreehouseNetworkManager: TRHNetworkManager {
 
 extension TreehouseNetworkManager {
     func fetchFeed(treeId: Int,
-                   completion: @escaping (_ value: FeedData?, _ error: Error?) -> Void) {
+                   completion: @escaping (_ value: [PostData]?, _ error: Error?) -> Void) {
         let url = TreehouseURLContainer.url(key: .baseUrl)
         guard let urlRequest = TreehouseNetworkURLRequest(user?.accessToken,
                                                           url: url,
@@ -29,7 +32,7 @@ extension TreehouseNetworkManager {
         }
         
         response(urlRequest,
-                 type: FeedData.self,
+                 type: [PostData].self,
                  completion: completion)
     }
 }

@@ -8,6 +8,20 @@
 import UIKit
 
 class FeedViewController: UIViewController {
+    
+    private var posts: [PostData] = [
+        PostData(profileImageUrl: "",
+                 memberName: "memberName",
+                 branchDegree: 10,
+                 createdAt: Date(),
+                 content: "hhihihihihi",
+                 postImageUrls: [],
+                 reactions: [.init(content: "HIHIHIIHIHIHIHi",
+                                   number: 5,
+                                   isPushed: true)],
+                 commentCount: 10)
+    ]
+    
     private var topView: UIView = {
         let view = UIView()
         return view
@@ -30,10 +44,9 @@ class FeedViewController: UIViewController {
     private lazy var changeTreehouseButton: UIButton = {
         let button = UIButton()
         button.setImage(TreehouseImageCollection.changeTreehouse, for: .normal)
-//        button.setTitle("트리하우스 변경", for: .normal)
-//        button.setTitleColor(.black, for: .normal)
-//        button.titleLabel?.font = .pretendard(size: 8)
-        
+        //        button.setTitle("트리하우스 변경", for: .normal)
+        //        button.setTitleColor(.black, for: .normal)
+        //        button.titleLabel?.font = .pretendard(size: 8)
         return button
     }()
     
@@ -50,6 +63,7 @@ class FeedViewController: UIViewController {
         configure()
         addSubviews()
         makeConstraint()
+        fetchFeeds()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,12 +76,14 @@ class FeedViewController: UIViewController {
         self.feedTableView.dataSource = self
         self.feedTableView.register(TreehallTableViewCell.self, forCellReuseIdentifier: TreehallTableViewCell.identifier)
         self.feedTableView.register(WritePostTableViewCell.self, forCellReuseIdentifier: WritePostTableViewCell.identifier)
+        self.feedTableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
     }
     
     private func addSubviews() {
         view.addSubviews(topView, feedTableView)
-        
-        topView.addSubviews(treehouseImageView, treehouseNameLabel, changeTreehouseButton)
+        topView.addSubviews(treehouseImageView,
+                            treehouseNameLabel,
+                            changeTreehouseButton)
     }
     
     private func makeConstraint() {
@@ -107,43 +123,38 @@ class FeedViewController: UIViewController {
     private func setCornerRadius() {
         treehouseImageView.layer.cornerRadius = treehouseImageView.bounds.width/2
     }
+    
+    private func fetchFeeds() {
+        TreehouseNetworkManager.shared.fetchFeed(treeId: 1) { [weak self] value, error in
+            guard let self = self else { return }
+            self.posts = value?.posts ?? []
+            print(value, error)
+        }
+    }
 }
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 2 + posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: TreehallTableViewCell.identifier) as? TreehallTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.selectionStyle = .none
-            return cell
-        } else if indexPath.row == 1 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: WritePostTableViewCell.identifier) as? WritePostTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.selectionStyle = .none
-            return cell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: TreehallTableViewCell.identifier) as? TreehallTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.selectionStyle = .none
-            return cell
+        switch indexPath.row {
+        case 0: return TreehallTableViewCell.makeCell(tableView)
+        case 1: return WritePostTableViewCell.makeCell(tableView)
+        default:
+            guard let post = posts[safe: indexPath.row-2] else { return UITableViewCell() }
+            return PostTableViewCell.makeCell(tableView,
+                                              post: post)
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 112
-        } else if indexPath.row == 1 {
-            return 56
-        } else {
-            return 56
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return switch indexPath.row {
+        case 0: 112
+        case 1: 56
+        default: 56
         }
     }
-
 }
