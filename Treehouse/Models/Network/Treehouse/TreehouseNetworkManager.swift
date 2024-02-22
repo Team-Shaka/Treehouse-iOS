@@ -35,4 +35,44 @@ extension TreehouseNetworkManager {
                  type: [PostData].self,
                  completion: completion)
     }
+    
+    func fetchPost(treeId: Int,
+                   postId: Int,
+                   completion: @escaping (_ value: PostDetailData?, _ error: Error?) -> Void) {
+        let url = TreehouseURLContainer.url(key: .baseUrl)
+        guard let urlRequest = TreehouseNetworkURLRequest(user?.accessToken,
+                                                          url: url,
+                                                          method: .get,
+                                                          path: .posts(treeId: treeId, postId: postId)) else {
+            completion(nil, TRHNetworkError.wrongURLRequestError)
+            return
+        }
+    }
+        
+    func fetchComment(treeId: Int,
+                      postId: Int,
+                      completion: @escaping (_ value: CommentData?, _ error: Error?) -> Void) {
+        let url = TreehouseURLContainer.url(key: .baseUrl)
+        guard let urlRequest = TreehouseNetworkURLRequest(user?.accessToken,
+                                                          url: url,
+                                                          method: .get,
+                                                          path: .comments(treeId: treeId, postId: postId)) else {
+            completion(nil, TRHNetworkError.wrongURLRequestError)
+            return
+        }
+    }
+        
+//    func writePost(treeId: Int,
+//                   content: String,
+//                   postImageUrls: [String],
+//                   completion: @escaping (_ value: , _ error: Error?) -> Void) {
+//        let url = TreehouseURLContainer.url(key: .baseUrl)
+//        guard let urlRequest = TreehouseNetworkURLRequest(user?.accessToken,
+//                                                          url: url,
+//                                                          method: .post,
+//                                                          path: .writePost(treeId: treeId)) else {
+//            completion(nil, TRHNetworkError.wrongURLRequestError)
+//            return
+//        }
+//    }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 struct CommentData: Codable {
     let commentId: Int
+    let memberName: String
     let content: String
     let reactions: [ReactionData]
     let createdAt: Date
@@ -17,6 +18,7 @@ struct CommentData: Codable {
 
 struct ReplyData: Codable {
     let replyId: Int
+    let memberName: String
     let content: String
     let reactions: [ReactionData]
     let createdAt: Date

@@ -11,9 +11,9 @@ struct PostDetailData: Codable {
     let postId: Int
     let profileImageUrl: String
     let memberName: String
-    let branchDegree: Int
-    let createdAt: Date
+//    let branchDegree: Int
     let content: String
     let postImageUrls: [String]
     let reactions: [ReactionData]
+    let createdAt: Date
 }
