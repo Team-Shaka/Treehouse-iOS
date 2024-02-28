@@ -55,7 +55,7 @@ class FeedViewController: UIViewController {
         configure()
         addSubviews()
         makeConstraint()
-        fetchFeeds()
+                fetchFeeds()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -105,7 +105,7 @@ class FeedViewController: UIViewController {
         changeTreehouseButton.snp.makeConstraints{ make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(16)
-//            make.leading.greaterThanOrEqualTo(treehouseNameLabel.snp.trailing)
+            //            make.leading.greaterThanOrEqualTo(treehouseNameLabel.snp.trailing)
             make.height.equalTo(treehouseImageView)
             make.width.equalTo(changeTreehouseButton.snp.height)
         }
@@ -124,22 +124,39 @@ class FeedViewController: UIViewController {
     private func fetchFeeds() {
         TreehouseNetworkManager.shared.fetchFeed(treeId: 1) { [weak self] value, error in
             guard let self = self else { return }
-            self.posts = value?.posts ?? []
-            print(value, error)
-            self.posts = value ?? []
-            self.posts = [PostData(profileImageUrl: value?.first?.profileImageUrl ?? "",
-                                   memberName: "Testing1", createdAt: "", content: "Changing the translatesAutoresizingMaskIntoConstraints property of the contentView of a UITableViewCell is not supported and will result in undefined behavior, as this property is managed by the owning UITableViewCell. Cell: <Treehouse.PostTableViewCell: 0x10788ac00; baseClass = UITableViewCell; frame = (0 0; 320 44); backgroundColor = UIExtendedGrayColorSpace 0 0; layer = <CALayer: 0x60000027b7c0>>",
-                                   postImageUrls: [], reactions: [], commentCount: 14),
-                          PostData(profileImageUrl: value?.first?.profileImageUrl ?? "",
-                                                 memberName: "Testing2", createdAt: "", content: "Testing",
-                                                 postImageUrls: [], reactions: [], commentCount: 14),
-                          PostData(profileImageUrl: value?.first?.profileImageUrl ?? "",
-                                                 memberName: "Testing3", createdAt: "", content: "asdjlkfjdfkalajdkfldsjafkadsfjlkadsfadklfjsdfkasdflkj",
-                                                 postImageUrls: [], reactions: [], commentCount: 14)]
-            self.feedTableView.reloadData()
-        }
+//            print(value, error)
+//            self.posts = value ?? []
+                self.posts = [PostData(postId: 3,
+                                       authorId: 1,
+                                       profileImageUrl: value?.first?.profileImageUrl ?? "",
+                                       memberName: "Member1",
+                                       content: "좀 돼라.",
+                                       postImageUrls: ["https://gist.github.com/Jeonhui/47927f5a1d7c57dfbf464da9af955230/raw/ae901f897c7edadcdc4d0cb6039995927519a72f/AppIcon.png", "https://gist.github.com/Jeonhui/47927f5a1d7c57dfbf464da9af955230/raw/0a85c4e9743e19bfe4b577e99607d1b7cdf41a93/briefing.png", "https://gist.github.com/Jeonhui/47927f5a1d7c57dfbf464da9af955230/raw/0a85c4e9743e19bfe4b577e99607d1b7cdf41a93/DailyQuest.png"],
+                                       createdAt: "2024-02-24",
+                                       commentCount: 13,
+                                       reactions: []),
+                              PostData(postId: 2,
+                                       authorId: 1,
+                                       profileImageUrl: value?.first?.profileImageUrl ?? "",
+                                       memberName: "Member1",
+                                       content: "Testing",
+                                       postImageUrls: [],
+                                       createdAt: "2024-02-24",
+                                       commentCount: 13,
+                                       reactions: []),
+                              PostData(postId: 1,
+                                       authorId: 1,
+                                       profileImageUrl: value?.first?.profileImageUrl ?? "",
+                                       memberName: "Member1",
+                                       content: "Treehouse",
+                                       postImageUrls: ["https://gist.github.com/Jeonhui/47927f5a1d7c57dfbf464da9af955230/raw/0a85c4e9743e19bfe4b577e99607d1b7cdf41a93/mellaAppIcon.png", "https://gist.github.com/Jeonhui/47927f5a1d7c57dfbf464da9af955230/raw/55aca5bee1f10e17dbc429cb2dff3e7abcb66a50/GUCCI.png"],
+                                       createdAt: "2024-02-24",
+                                       commentCount: 13,
+                                       reactions: [])]
+                self.feedTableView.reloadData()
+            }
     }
-    
+        
     @objc func changeTreehouseButtonTapped() {
         let treehouseSelectionBottomSheetViewController = TreehouseSelectionBottomSheetViewController()
         let sheetController = SheetViewController(controller: treehouseSelectionBottomSheetViewController, sizes: [ .percent(0.5) , .fullscreen ])
@@ -152,7 +169,7 @@ class FeedViewController: UIViewController {
         self.present(sheetController, animated: true, completion: nil)
     }
 }
-
+    
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2 + posts.count

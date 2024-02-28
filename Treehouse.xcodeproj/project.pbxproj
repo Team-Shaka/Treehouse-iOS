@@ -36,6 +36,7 @@
 		EEA6FB422B87B8D700C8CBD6 /* TreehouseSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB412B87B8D700C8CBD6 /* TreehouseSelectionTableViewCell.swift */; };
 		EEA6FB442B87BC4000C8CBD6 /* TreehouseCreateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB432B87BC4000C8CBD6 /* TreehouseCreateTableViewCell.swift */; };
 		EEA6FB462B87C74B00C8CBD6 /* TreehouseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB452B87C74B00C8CBD6 /* TreehouseData.swift */; };
+		EEA6FB482B8A030E00C8CBD6 /* ContentImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB472B8A030E00C8CBD6 /* ContentImageCollectionViewCell.swift */; };
 		EEE574162B7B76220040AC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574152B7B76220040AC56 /* AppDelegate.swift */; };
 		EEE574182B7B76220040AC56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574172B7B76220040AC56 /* SceneDelegate.swift */; };
 		EEE5741F2B7B76240040AC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEE5741E2B7B76240040AC56 /* Assets.xcassets */; };
@@ -97,6 +98,7 @@
 		EEA6FB412B87B8D700C8CBD6 /* TreehouseSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehouseSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		EEA6FB432B87BC4000C8CBD6 /* TreehouseCreateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehouseCreateTableViewCell.swift; sourceTree = "<group>"; };
 		EEA6FB452B87C74B00C8CBD6 /* TreehouseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehouseData.swift; sourceTree = "<group>"; };
+		EEA6FB472B8A030E00C8CBD6 /* ContentImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEE574122B7B76220040AC56 /* Treehouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treehouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE574152B7B76220040AC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEE574172B7B76220040AC56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				EEE5746C2B7BA97C0040AC56 /* TreehallTableViewCell.swift */,
 				EEA6FB412B87B8D700C8CBD6 /* TreehouseSelectionTableViewCell.swift */,
 				EEA6FB432B87BC4000C8CBD6 /* TreehouseCreateTableViewCell.swift */,
+				EEA6FB472B8A030E00C8CBD6 /* ContentImageCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				EEE574692B7BA5050040AC56 /* WritePostTableViewCell.swift in Sources */,
 				A5D239252B87A1DE00B89993 /* UIViewPreview.swift in Sources */,
 				EEA6FB342B866DE000C8CBD6 /* TreehouseNetworkURLRequest.swift in Sources */,
+				EEA6FB482B8A030E00C8CBD6 /* ContentImageCollectionViewCell.swift in Sources */,
 				EEE5745D2B7BA21F0040AC56 /* BranchViewController.swift in Sources */,
 				EEA6FB462B87C74B00C8CBD6 /* TreehouseData.swift in Sources */,
 				EEA6FB442B87BC4000C8CBD6 /* TreehouseCreateTableViewCell.swift in Sources */,

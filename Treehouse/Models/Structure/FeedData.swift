@@ -12,12 +12,14 @@ struct FeedData: Codable {
 }
 
 struct PostData: Codable {
+    let postId: Int
+    let authorId: Int
     let profileImageUrl: String
     let memberName: String
     // let branchDegree: Int
-    let createdAt: String
     let content: String
     let postImageUrls: [String]
-    let reactions: [ReactionData]
+    let createdAt: String
     let commentCount: Int
+    let reactions: [ReactionData]
 }

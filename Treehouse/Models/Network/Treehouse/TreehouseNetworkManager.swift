@@ -12,7 +12,7 @@ final class TreehouseNetworkManager: TRHNetworkManager {
     static let shared: TreehouseNetworkManager = TreehouseNetworkManager()
     private init() { 
         
-        self.user = User(userId: 1, accessToken: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNZW1iZXIxIiwiZXhwIjoxNzA5ODIzNTY3LCJpYXQiOjE3MDg2MTM5Njd9.0YcirKzIdfyEIhlgVkw9spcnQgHj0ldBAnWiGUWj3-Y'", refreshToken: "")
+        self.user = User(userId: 1, accessToken: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNZW1iZXIxIiwiZXhwIjoxNzA5ODIzNTY3LCJpYXQiOjE3MDg2MTM5Njd9.0YcirKzIdfyEIhlgVkw9spcnQgHj0ldBAnWiGUWj3-Y", refreshToken: "")
     }
     
     @UserDefaultWrapper(key: .member, defaultValue: nil)

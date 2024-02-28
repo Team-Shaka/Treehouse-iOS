@@ -17,9 +17,30 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
+    private enum Const {
+        static let itemSize = CGSize(width: 280, height: 280)
+        static let itemSpacing = 12.0
+        
+        static var insetX: CGFloat {
+            (UIScreen.main.bounds.width - Self.itemSize.width) / 2.0
+        }
+        
+        static var collectionViewContentInset: UIEdgeInsets {
+            UIEdgeInsets(top: 0, left: 0, bottom: 0, right: Self.insetX)
+        }
+    }
+    
+    private let collectionViewFlowLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = Const.itemSize
+        layout.minimumLineSpacing = Const.itemSpacing
+        layout.minimumInteritemSpacing = 0
+        return layout
+    }()
+    
     private var mainContainerView: UIView = {
         let view = UIView()
-        
         return view
     }()
     
@@ -71,10 +92,27 @@ class PostTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    private lazy var contentImageCollectionView: UICollectionView = {
+        let view = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewFlowLayout)
+        view.isScrollEnabled = true
+        view.showsHorizontalScrollIndicator = false
+        view.showsVerticalScrollIndicator = false
+        view.backgroundColor = .clear
+        view.clipsToBounds = true
+        view.isPagingEnabled = false
+        view.contentInsetAdjustmentBehavior = .never
+        view.contentInset = Const.collectionViewContentInset
+        view.decelerationRate = .fast
+//        view.contentMode = .scaleAspectFill
+        return view
+    }()
+    
     private var commentCountView: CommentCountView = {
         let commentCountView = CommentCountView(count: 0)
         return commentCountView
     }()
+    
+    private var previousIndex: Int? = 0
     
     override init(style: UITableViewCell.CellStyle,
                   reuseIdentifier: String?) {
@@ -91,6 +129,10 @@ class PostTableViewCell: UITableViewCell {
     func configure() {
         self.backgroundColor = .clear
         self.contentView.backgroundColor = .clear
+        
+        self.contentImageCollectionView.delegate = self
+        self.contentImageCollectionView.dataSource = self
+        self.contentImageCollectionView.register(ContentImageCollectionViewCell.self, forCellWithReuseIdentifier: ContentImageCollectionViewCell.identifier)
     }
     
     func addSubviews() {
@@ -101,6 +143,7 @@ class PostTableViewCell: UITableViewCell {
                                          branchAndDateLabel,
                                          postSettingButton,
                                          contentLabel,
+                                         contentImageCollectionView,
                                          commentCountView)
     }
     
@@ -145,8 +188,14 @@ class PostTableViewCell: UITableViewCell {
             make.leading.trailing.equalToSuperview()
         }
         
+        contentImageCollectionView.snp.makeConstraints{ make in
+            make.top.equalTo(contentLabel.snp.bottom).offset(4)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(0)
+        }
+        
         commentCountView.snp.makeConstraints { make in
-            make.top.equalTo(contentLabel.snp.bottom).offset(12)
+            make.top.equalTo(contentImageCollectionView.snp.bottom).offset(12)
             make.leading.trailing.equalToSuperview()
         }
     }
@@ -157,6 +206,14 @@ class PostTableViewCell: UITableViewCell {
         self.userNameLabel.text = post.memberName
         self.contentLabel.text = post.content
         self.commentCountView.count = post.commentCount
+        if post.postImageUrls.count > 0 {
+            self.contentImageCollectionView.snp.removeConstraints()
+            self.contentImageCollectionView.snp.makeConstraints{ make in
+                make.top.equalTo(contentLabel.snp.bottom).offset(4)
+                make.leading.trailing.equalToSuperview()
+                make.height.equalTo(self.contentImageCollectionView.snp.width)
+            }
+        }
     }
 }
 
@@ -169,5 +226,63 @@ extension PostTableViewCell {
         cell.selectionStyle = .none
         cell.post = post
         return cell
+    }
+}
+
+extension PostTableViewCell: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        self.post.postImageUrls.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentImageCollectionViewCell.identifier, for: indexPath) as! ContentImageCollectionViewCell
+        cell.prepare(imageUrl: self.post.postImageUrls[indexPath.row],
+                     isDimmed: indexPath.item != previousIndex)
+        return cell
+    }
+}
+
+extension PostTableViewCell: UICollectionViewDelegateFlowLayout {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let scrolledOffsetX = targetContentOffset.pointee.x + scrollView.contentInset.left
+        let cellWidth = Const.itemSize.width + Const.itemSpacing
+        let index = round(scrolledOffsetX / cellWidth)
+        targetContentOffset.pointee = CGPoint(x: index * cellWidth - scrollView.contentInset.left, y: scrollView.contentInset.top)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrolledOffset = scrollView.contentOffset.x + scrollView.contentInset.left
+        let cellWidth = Const.itemSize.width + Const.itemSpacing
+        let index = Int(round(scrolledOffset / cellWidth))
+        
+        
+        
+        if let cell = self.contentImageCollectionView
+            .cellForItem(at: IndexPath(item: index,
+                                       section: 0)) as? ContentImageCollectionViewCell {
+            UIView.animate(withDuration: 1) {
+                cell.dimmedView.isHidden = true
+            }
+        }
+        
+        
+        
+        defer {
+            self.previousIndex = index
+            self.contentImageCollectionView.reloadData()
+        }
+        
+        guard
+            let previousIndex = self.previousIndex,
+            previousIndex != index
+        else { return }
+        
+        if let cell = self.contentImageCollectionView
+            .cellForItem(at: IndexPath(item: previousIndex,
+                                       section: 0)) as? ContentImageCollectionViewCell {
+            UIView.animate(withDuration: 1) {
+                cell.dimmedView.isHidden = false
+            }
+        }
     }
 }
