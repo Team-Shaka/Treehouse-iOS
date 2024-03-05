@@ -9,6 +9,7 @@ import UIKit
 
 extension UIColor {
     static let trPrimaryGreen: UIColor = UIColor(red: 92 / 255, green: 144 / 255, blue: 84 / 255, alpha: 1)
+    static let trDimGreen: UIColor = UIColor(red: 26 / 255, green: 168 / 255, blue: 115 / 255, alpha: 0.1)
     static let trPrimaryGray: UIColor = UIColor(red: 156 / 255, green: 156 / 255, blue: 156 / 255, alpha: 1)
     static let trTextGray: UIColor = UIColor(red: 232 / 255, green: 233 / 255, blue: 233 / 255, alpha: 1)
     static let trBackgroundWhite: UIColor = UIColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
