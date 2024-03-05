@@ -9,11 +9,12 @@ import Foundation
 
 struct PostDetailData: Codable {
     let postId: Int
+    let authorId: Int
     let profileImageUrl: String
     let memberName: String
-//    let branchDegree: Int
+    let branchDegree: Int
     let content: String
     let postImageUrls: [String]
     let reactions: [ReactionData]
-    let createdAt: Date
+    let createdAt: String
 }

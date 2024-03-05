@@ -8,6 +8,8 @@
 import Foundation
 
 struct FeedData: Codable {
+    let treeId: Int
+    let treeName: String
     let posts: [PostData]
 }
 
@@ -16,7 +18,7 @@ struct PostData: Codable {
     let authorId: Int
     let profileImageUrl: String
     let memberName: String
-    // let branchDegree: Int
+    let branchDegree: Int
     let content: String
     let postImageUrls: [String]
     let createdAt: String

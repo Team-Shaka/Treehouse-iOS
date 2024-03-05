@@ -8,6 +8,7 @@
 import Foundation
 
 struct TreehouseData: Codable {
+    let treehouseId: Int
     let treehouseName: String
     let memberCount: Int
     let topProfileImages: [String]
