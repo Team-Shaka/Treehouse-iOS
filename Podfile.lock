@@ -2,12 +2,22 @@ PODS:
   - Alamofire (5.0.5)
   - FittedSheets (2.6.1)
   - Kingfisher (7.11.0)
+  - lottie-ios (4.4.1)
+  - RxCocoa (6.6.0):
+    - RxRelay (= 6.6.0)
+    - RxSwift (= 6.6.0)
+  - RxRelay (6.6.0):
+    - RxSwift (= 6.6.0)
+  - RxSwift (6.6.0)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0)
   - FittedSheets (~> 2.6.1)
   - Kingfisher (~> 7.0)
+  - lottie-ios (~> 4.4.1)
+  - RxCocoa (= 6.6.0)
+  - RxSwift (= 6.6.0)
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
@@ -15,14 +25,22 @@ SPEC REPOS:
     - Alamofire
     - FittedSheets
     - Kingfisher
+    - lottie-ios
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   FittedSheets: 37e35f105c531f3845075f1788dd8517a35315c4
   Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
+  lottie-ios: e047b1d2e6239b787cc5e9755b988869cf190494
+  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
+  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: c7611819eebe654d2a16effe09158fca4f4717b5
+PODFILE CHECKSUM: 6c200f7efc539b3c8112b3e790a2becd99100515
 
 COCOAPODS: 1.13.0

@@ -10,4 +10,7 @@ target 'Treehouse' do
   pod 'Alamofire', '~> 5.0.0'
   pod 'FittedSheets', '~> 2.6.1'
   pod 'Kingfisher', '~> 7.0'
+  pod 'lottie-ios', '~> 4.4.1'
+  pod 'RxSwift', '6.6.0'
+  pod 'RxCocoa', '6.6.0'
 end
