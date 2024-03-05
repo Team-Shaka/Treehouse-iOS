@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import RxSwift
 
 final class TreehouseNetworkManager: TRHNetworkManager {
     static let shared: TreehouseNetworkManager = TreehouseNetworkManager()
@@ -57,6 +58,17 @@ extension TreehouseNetworkManager {
                                                           url: url,
                                                           method: .get,
                                                           path: .comments(treeId: treeId, postId: postId)) else {
+            completion(nil, TRHNetworkError.wrongURLRequestError)
+            return
+        }
+    }
+    
+    func fetchNotification(completion: @escaping (_ value: [NotificationData]?, _ error: Error?) -> Void) {
+        let url = TreehouseURLContainer.url(key: .baseUrl)
+        guard let urlRequest = TreehouseNetworkURLRequest(user?.accessToken,
+                                                          url: url,
+                                                          method: .get,
+                                                          path: .notifications) else {
             completion(nil, TRHNetworkError.wrongURLRequestError)
             return
         }
