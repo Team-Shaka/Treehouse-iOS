@@ -37,6 +37,12 @@
 		EEA6FB442B87BC4000C8CBD6 /* TreehouseCreateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB432B87BC4000C8CBD6 /* TreehouseCreateTableViewCell.swift */; };
 		EEA6FB462B87C74B00C8CBD6 /* TreehouseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB452B87C74B00C8CBD6 /* TreehouseData.swift */; };
 		EEA6FB482B8A030E00C8CBD6 /* ContentImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB472B8A030E00C8CBD6 /* ContentImageCollectionViewCell.swift */; };
+		EEA6FB4E2B8F8C6500C8CBD6 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB4D2B8F8C6400C8CBD6 /* CommentTableViewCell.swift */; };
+		EEA6FB502B92319100C8CBD6 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB4F2B92319100C8CBD6 /* PostViewController.swift */; };
+		EEA6FB522B9244BD00C8CBD6 /* PostDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB512B9244BD00C8CBD6 /* PostDetailTableViewCell.swift */; };
+		EEA6FB552B93462300C8CBD6 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB542B93462300C8CBD6 /* NotificationTableViewCell.swift */; };
+		EEA6FB572B9348CC00C8CBD6 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6FB562B9348CC00C8CBD6 /* NotificationData.swift */; };
+		EEDF829C2BA6E3C7002ABC20 /* WritePostTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF829B2BA6E3C7002ABC20 /* WritePostTableViewCellDelegate.swift */; };
 		EEE574162B7B76220040AC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574152B7B76220040AC56 /* AppDelegate.swift */; };
 		EEE574182B7B76220040AC56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE574172B7B76220040AC56 /* SceneDelegate.swift */; };
 		EEE5741F2B7B76240040AC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEE5741E2B7B76240040AC56 /* Assets.xcassets */; };
@@ -99,6 +105,12 @@
 		EEA6FB432B87BC4000C8CBD6 /* TreehouseCreateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehouseCreateTableViewCell.swift; sourceTree = "<group>"; };
 		EEA6FB452B87C74B00C8CBD6 /* TreehouseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreehouseData.swift; sourceTree = "<group>"; };
 		EEA6FB472B8A030E00C8CBD6 /* ContentImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEA6FB4D2B8F8C6400C8CBD6 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		EEA6FB4F2B92319100C8CBD6 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		EEA6FB512B9244BD00C8CBD6 /* PostDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewCell.swift; sourceTree = "<group>"; };
+		EEA6FB542B93462300C8CBD6 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		EEA6FB562B9348CC00C8CBD6 /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
+		EEDF829B2BA6E3C7002ABC20 /* WritePostTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePostTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		EEE574122B7B76220040AC56 /* Treehouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treehouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE574152B7B76220040AC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEE574172B7B76220040AC56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +166,10 @@
 		A5D239262B87AEA800B89993 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EEA6FB392B87B7F800C8CBD6 /* TreehouseSelectionBottomSheetViewController.swift */,
+				EEA6FB3F2B87B83D00C8CBD6 /* CommentBottomSheetViewController.swift */,
+				EEA6FB3D2B87B82900C8CBD6 /* PostBottomSheetViewController.swift */,
+				EEA6FB372B87AEE300C8CBD6 /* TreehousePopUpViewController.swift */,
 				A5D239292B87AEE400B89993 /* ReactionButton.swift */,
 				A5D2392B2B87B23700B89993 /* CommentCountView.swift */,
 			);
@@ -185,6 +201,7 @@
 				EEA6FB112B8662A900C8CBD6 /* PostDetailData.swift */,
 				EEA6FB132B86630200C8CBD6 /* ReactionData.swift */,
 				EEA6FB152B86647B00C8CBD6 /* CommentData.swift */,
+				EEA6FB562B9348CC00C8CBD6 /* NotificationData.swift */,
 				EEA6FB292B866B7200C8CBD6 /* User.swift */,
 				EEA6FB452B87C74B00C8CBD6 /* TreehouseData.swift */,
 			);
@@ -245,6 +262,22 @@
 			path = propertyList;
 			sourceTree = "<group>";
 		};
+		EEA6FB532B93461700C8CBD6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6FB542B93462300C8CBD6 /* NotificationTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EEDF829A2BA6E3B2002ABC20 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF829B2BA6E3C7002ABC20 /* WritePostTableViewCellDelegate.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
 		EEE574092B7B76220040AC56 = {
 			isa = PBXGroup;
 			children = (
@@ -287,11 +320,11 @@
 		EEE5742B2B7B793B0040AC56 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EEE574302B7B79AB0040AC56 /* MainTabBarViewController.swift */,
 				EEE574612B7BA38F0040AC56 /* SettingScenes */,
 				EEE5745E2B7BA2B50040AC56 /* NotificationScenes */,
 				EEE5745B2B7BA20F0040AC56 /* BranchScenes */,
 				EEE5742C2B7B79450040AC56 /* FeedScenes */,
-				EEE574302B7B79AB0040AC56 /* MainTabBarViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -299,13 +332,11 @@
 		EEE5742C2B7B79450040AC56 /* FeedScenes */ = {
 			isa = PBXGroup;
 			children = (
+				EEDF829A2BA6E3B2002ABC20 /* protocols */,
 				A5D239262B87AEA800B89993 /* Components */,
 				EEE5742D2B7B79630040AC56 /* Cells */,
 				EEE5742E2B7B79970040AC56 /* FeedViewController.swift */,
-				EEA6FB372B87AEE300C8CBD6 /* TreehousePopUpViewController.swift */,
-				EEA6FB392B87B7F800C8CBD6 /* TreehouseSelectionBottomSheetViewController.swift */,
-				EEA6FB3D2B87B82900C8CBD6 /* PostBottomSheetViewController.swift */,
-				EEA6FB3F2B87B83D00C8CBD6 /* CommentBottomSheetViewController.swift */,
+				EEA6FB4F2B92319100C8CBD6 /* PostViewController.swift */,
 			);
 			path = FeedScenes;
 			sourceTree = "<group>";
@@ -315,10 +346,12 @@
 			children = (
 				EEE574682B7BA5050040AC56 /* WritePostTableViewCell.swift */,
 				EEE5746A2B7BA50C0040AC56 /* PostTableViewCell.swift */,
+				EEA6FB4D2B8F8C6400C8CBD6 /* CommentTableViewCell.swift */,
 				EEE5746C2B7BA97C0040AC56 /* TreehallTableViewCell.swift */,
 				EEA6FB412B87B8D700C8CBD6 /* TreehouseSelectionTableViewCell.swift */,
 				EEA6FB432B87BC4000C8CBD6 /* TreehouseCreateTableViewCell.swift */,
 				EEA6FB472B8A030E00C8CBD6 /* ContentImageCollectionViewCell.swift */,
+				EEA6FB512B9244BD00C8CBD6 /* PostDetailTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -396,6 +429,7 @@
 		EEE5745E2B7BA2B50040AC56 /* NotificationScenes */ = {
 			isa = PBXGroup;
 			children = (
+				EEA6FB532B93461700C8CBD6 /* Cells */,
 				EEE5745F2B7BA2C10040AC56 /* NotificationViewController.swift */,
 			);
 			path = NotificationScenes;
@@ -539,11 +573,15 @@
 				EEA6FB402B87B83D00C8CBD6 /* CommentBottomSheetViewController.swift in Sources */,
 				EEE574312B7B79AB0040AC56 /* MainTabBarViewController.swift in Sources */,
 				EEA6FB102B86603600C8CBD6 /* TreehouseNetworkResult.swift in Sources */,
+				EEA6FB522B9244BD00C8CBD6 /* PostDetailTableViewCell.swift in Sources */,
 				EEA6FB162B86647B00C8CBD6 /* CommentData.swift in Sources */,
 				EEA6FB232B86699000C8CBD6 /* TRHNetworkError.swift in Sources */,
+				EEA6FB502B92319100C8CBD6 /* PostViewController.swift in Sources */,
 				EEE574532B7B7AAC0040AC56 /* UIViewController+.swift in Sources */,
 				A5D2392A2B87AEE400B89993 /* ReactionButton.swift in Sources */,
+				EEDF829C2BA6E3C7002ABC20 /* WritePostTableViewCellDelegate.swift in Sources */,
 				EEA6FB1D2B86659500C8CBD6 /* TRHNetworkManager.swift in Sources */,
+				EEA6FB572B9348CC00C8CBD6 /* NotificationData.swift in Sources */,
 				EEA6FB422B87B8D700C8CBD6 /* TreehouseSelectionTableViewCell.swift in Sources */,
 				EEA6FB2A2B866B7200C8CBD6 /* User.swift in Sources */,
 				EEE574692B7BA5050040AC56 /* WritePostTableViewCell.swift in Sources */,
@@ -555,6 +593,7 @@
 				EEA6FB442B87BC4000C8CBD6 /* TreehouseCreateTableViewCell.swift in Sources */,
 				EEE574632B7BA39D0040AC56 /* SettingViewController.swift in Sources */,
 				EEA6FB212B8667CC00C8CBD6 /* Dictionary+.swift in Sources */,
+				EEA6FB4E2B8F8C6500C8CBD6 /* CommentTableViewCell.swift in Sources */,
 				EEA6FB2D2B866C8500C8CBD6 /* TreehouseURLContainer.swift in Sources */,
 				EEE574542B7B7AAC0040AC56 /* UIColor+.swift in Sources */,
 				EEA6FB3E2B87B82900C8CBD6 /* PostBottomSheetViewController.swift in Sources */,
@@ -566,6 +605,7 @@
 				EEA6FB282B866B3E00C8CBD6 /* UserDefaultsWrapperKey.swift in Sources */,
 				EEA6FB3A2B87B7F800C8CBD6 /* TreehouseSelectionBottomSheetViewController.swift in Sources */,
 				EEE5742F2B7B79970040AC56 /* FeedViewController.swift in Sources */,
+				EEA6FB552B93462300C8CBD6 /* NotificationTableViewCell.swift in Sources */,
 				EEE574572B7B7C300040AC56 /* TreehouseImageCollection.swift in Sources */,
 				EEE574602B7BA2C10040AC56 /* NotificationViewController.swift in Sources */,
 				EEA6FB122B8662A900C8CBD6 /* PostDetailData.swift in Sources */,

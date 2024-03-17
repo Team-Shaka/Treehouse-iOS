@@ -1,17 +1,17 @@
 //
-//  PostTableViewCell.swift
+//  PostDetailTableViewCell.swift
 //  Treehouse
 //
-//  Created by BoMin Lee on 2/13/24.
+//  Created by BoMin Lee on 3/2/24.
 //
 
 import UIKit
 import Kingfisher
 
-class PostTableViewCell: UITableViewCell {
-    static let identifier: String = String(describing: PostTableViewCell.self)
+class PostDetailTableViewCell: UITableViewCell {
+    static let identifier: String = String(describing: PostDetailTableViewCell.self)
     
-    var post: PostData! {
+    var postDetail: PostDetailData! {
         didSet {
             update()
         }
@@ -26,7 +26,7 @@ class PostTableViewCell: UITableViewCell {
         }
         
         static var collectionViewContentInset: UIEdgeInsets {
-            UIEdgeInsets(top: 0, left: 0, bottom: 0, right: Self.insetX)
+            UIEdgeInsets(top: 0, left: Self.insetX, bottom: 0, right: Self.insetX)
         }
     }
     
@@ -123,11 +123,6 @@ class PostTableViewCell: UITableViewCell {
         return view
     }()
     
-    private var commentCountView: CommentCountView = {
-        let commentCountView = CommentCountView(count: 0)
-        return commentCountView
-    }()
-    
     private var previousIndex: Int? = 0
     
     override init(style: UITableViewCell.CellStyle,
@@ -161,8 +156,7 @@ class PostTableViewCell: UITableViewCell {
                                          dateLabel,
                                          postSettingButton,
                                          contentLabel,
-                                         contentImageCollectionView,
-                                         commentCountView)
+                                         contentImageCollectionView)
     }
     
     func makeConstraints() {
@@ -181,7 +175,7 @@ class PostTableViewCell: UITableViewCell {
         contentContainerView.snp.makeConstraints { make in
             make.top.trailing.equalToSuperview()
             make.leading.equalTo(userImageView.snp.trailing).offset(10)
-            make.bottom.equalTo(commentCountView)
+            make.bottom.equalTo(contentImageCollectionView)
         }
         
         userNameLabel.snp.makeConstraints { make in
@@ -221,22 +215,17 @@ class PostTableViewCell: UITableViewCell {
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(0)
         }
-        
-        commentCountView.snp.makeConstraints { make in
-            make.top.equalTo(contentImageCollectionView.snp.bottom).offset(12)
-            make.leading.trailing.equalToSuperview()
-        }
     }
     
     func update() {
-        guard let url = URL(string: post.profileImageUrl) else { return }
+        guard let url = URL(string: postDetail.profileImageUrl) else { return }
         self.userImageView.kf.setImage(with: url)
-        self.userNameLabel.text = post.memberName
-        self.contentLabel.text = post.content
-        self.branchLabel.text = "Branch \(post.branchDegree)"
-        self.dateLabel.text = "\(post.createdAt.substring(from: 0, to: 9))"
-//        self.commentCountView.count = post.commentCount
-        if post.postImageUrls.count > 0 {
+        self.userNameLabel.text = postDetail.memberName
+        self.contentLabel.text = postDetail.content
+        self.branchLabel.text = "Branch \(postDetail.branchDegree)"
+        self.dateLabel.text = "\(postDetail.createdAt.substring(from: 0, to: 9))"
+        
+        if postDetail.postImageUrls.count > 0 {
             self.contentImageCollectionView.snp.removeConstraints()
             self.contentImageCollectionView.snp.makeConstraints{ make in
                 make.top.equalTo(contentLabel.snp.bottom).offset(4)
@@ -247,32 +236,32 @@ class PostTableViewCell: UITableViewCell {
     }
 }
 
-extension PostTableViewCell {
+extension PostDetailTableViewCell {
     static func makeCell(_ tableView: UITableView,
-                         post: PostData) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier) as? PostTableViewCell else {
+                         postDetail: PostDetailData) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PostDetailTableViewCell.identifier) as? PostDetailTableViewCell else {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
-        cell.post = post
+        cell.postDetail = postDetail
         return cell
     }
 }
 
-extension PostTableViewCell: UICollectionViewDataSource {
+extension PostDetailTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.post.postImageUrls.count
+        self.postDetail.postImageUrls.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentImageCollectionViewCell.identifier, for: indexPath) as! ContentImageCollectionViewCell
-        cell.prepare(imageUrl: self.post.postImageUrls[indexPath.row],
+        cell.prepare(imageUrl: self.postDetail.postImageUrls[indexPath.row],
                      isDimmed: indexPath.item != previousIndex)
         return cell
     }
 }
 
-extension PostTableViewCell: UICollectionViewDelegateFlowLayout {
+extension PostDetailTableViewCell: UICollectionViewDelegateFlowLayout {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let scrolledOffsetX = targetContentOffset.pointee.x + scrollView.contentInset.left
         let cellWidth = Const.itemSize.width + Const.itemSpacing

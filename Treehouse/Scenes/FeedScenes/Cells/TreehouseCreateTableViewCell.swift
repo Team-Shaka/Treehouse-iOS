@@ -82,6 +82,10 @@ class TreehouseCreateTableViewCell: UITableViewCell {
             make.trailing.equalTo(createTreehouseLabel.snp.leading).offset(-1)
         }
     }
+    
+    func update() {
+        
+    }
 }
 
 extension TreehouseCreateTableViewCell {

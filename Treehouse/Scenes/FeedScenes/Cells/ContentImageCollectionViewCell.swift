@@ -81,8 +81,8 @@ final class ContentImageCollectionViewCell: UICollectionViewCell {
     }
     
     func prepare(imageUrl: String, isDimmed: Bool) {
-        if let url = URL(string: imageUrl) { 
-            self.contentImageView.kf.setImage(with: url)
+        if let url = URL(string: imageUrl) {
+            self.contentImageView.kf.setImage(with: url, placeholder: UIImage(named: "defaultImage"))
         }
         self.dimmedView.isHidden = !isDimmed
     }

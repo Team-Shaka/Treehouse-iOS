@@ -9,10 +9,7 @@ import UIKit
 import FittedSheets
 
 class TreehouseSelectionBottomSheetViewController: UIViewController {
-    private var treehouses: [TreehouseData] = [
-        TreehouseData(treehouseName: "스터디고", memberCount: 90, topProfileImages: ["", "", ""]),
-        TreehouseData(treehouseName: "HAHAHA", memberCount: 80, topProfileImages: ["", "", ""]),
-    ]
+    var treehouses: [TreehouseData] = []
     
     private var treehouseSelectionTableView: UITableView = {
         let tableView = UITableView()
@@ -35,6 +32,8 @@ class TreehouseSelectionBottomSheetViewController: UIViewController {
         treehouseSelectionTableView.register(TreehouseCreateTableViewCell.self, forCellReuseIdentifier: TreehouseCreateTableViewCell.identifier)
     }
     
+    
+    
     private func addSubviews() {
         self.view.addSubview(treehouseSelectionTableView)
     }
@@ -49,13 +48,13 @@ class TreehouseSelectionBottomSheetViewController: UIViewController {
 
 extension TreehouseSelectionBottomSheetViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return treehouses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
-        case 1: return TreehouseCreateTableViewCell.makeCell(tableView)
-        default: return TreehouseSelectionTableViewCell.makeCell(tableView, treehouse: treehouses[0])
+        case treehouses.count-1: return TreehouseCreateTableViewCell.makeCell(tableView)
+        default: return TreehouseSelectionTableViewCell.makeCell(tableView, treehouse: treehouses[indexPath.row])
         }
     }
     

@@ -13,7 +13,7 @@ final class TreehouseNetworkManager: TRHNetworkManager {
     static let shared: TreehouseNetworkManager = TreehouseNetworkManager()
     private init() { 
         
-        self.user = User(userId: 1, accessToken: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNZW1iZXIxIiwiZXhwIjoxNzA5ODIzNTY3LCJpYXQiOjE3MDg2MTM5Njd9.0YcirKzIdfyEIhlgVkw9spcnQgHj0ldBAnWiGUWj3-Y", refreshToken: "")
+        self.user = User(userId: 5, accessToken: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNZW1iZXI1IiwiZXhwIjoxNzExODczOTg1LCJpYXQiOjE3MTA2NjQzODV9.E1cc-jx7nEyYg8CNoxbh9UZxrjMq7NRdWG3mSabtfgI", refreshToken: "")
     }
     
     @UserDefaultWrapper(key: .member, defaultValue: nil)
@@ -73,18 +73,33 @@ extension TreehouseNetworkManager {
             return
         }
     }
+    
+    func fetchTreehouse(completion: @escaping (_ value: [TreehouseData]?, _ error: Error?) -> Void) {
+        let url = TreehouseURLContainer.url(key: .baseUrl)
+        guard let urlRequest = TreehouseNetworkURLRequest(user?.accessToken,
+                                                          url: url,
+                                                          method: .get,
+                                                          path: .treehouse) else {
+            completion(nil, TRHNetworkError.wrongURLRequestError)
+            return
+        }
+    }
         
-//    func writePost(treeId: Int,
-//                   content: String,
-//                   postImageUrls: [String],
-//                   completion: @escaping (_ value: , _ error: Error?) -> Void) {
-//        let url = TreehouseURLContainer.url(key: .baseUrl)
+    func writePost(treeId: Int,
+                   content: String,
+                   postImages: [UIImage],
+                   completion: @escaping (_ value: String, _ error: Error?) -> Void) {
+        let url = TreehouseURLContainer.url(key: .baseUrl)
 //        guard let urlRequest = TreehouseNetworkURLRequest(user?.accessToken,
 //                                                          url: url,
 //                                                          method: .post,
 //                                                          path: .writePost(treeId: treeId)) else {
-//            completion(nil, TRHNetworkError.wrongURLRequestError)
+//            completion("", TRHNetworkError.wrongURLRequestError)
 //            return
 //        }
-//    }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
+    }
 }

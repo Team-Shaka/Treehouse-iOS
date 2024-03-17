@@ -6,9 +6,16 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TreehouseSelectionTableViewCell: UITableViewCell {
     static let identifier: String = String(describing: TreehouseSelectionTableViewCell.self)
+    
+    var treehouse: TreehouseData! {
+        didSet {
+            update()
+        }
+    }
     
     private var mainContainerView: UIView = {
         let view = UIView()
@@ -42,6 +49,7 @@ class TreehouseSelectionTableViewCell: UITableViewCell {
     private var member1ImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemBlue
+        imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 15
         return imageView
     }()
@@ -49,6 +57,7 @@ class TreehouseSelectionTableViewCell: UITableViewCell {
     private var member2ImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemYellow
+        imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 15
         return imageView
     }()
@@ -56,6 +65,7 @@ class TreehouseSelectionTableViewCell: UITableViewCell {
     private var member3ImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemRed
+        imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 15
         return imageView
     }()
@@ -152,6 +162,29 @@ class TreehouseSelectionTableViewCell: UITableViewCell {
         treehouseView.bringSubviewToFront(member2ImageView)
         treehouseView.bringSubviewToFront(member1ImageView)
     }
+    
+    func update() {
+        self.treehouseNameLabel.text = treehouse.treeName
+        self.memberCountLabel.text = "외 \(treehouse.treeSize - 3)명"
+        if let url1 = URL(string: treehouse.treeMemberProfileImages[0]) {
+            self.member1ImageView.kf.setImage(with: url1, placeholder: TreehouseImageCollection.defaultImage)
+        }
+        if let url2 = URL(string: treehouse.treeMemberProfileImages[0]) {
+            self.member2ImageView.kf.setImage(with: url2, placeholder: TreehouseImageCollection.defaultImage)
+        }
+        if let url3 = URL(string: treehouse.treeMemberProfileImages[0]) {
+            self.member3ImageView.kf.setImage(with: url3, placeholder: TreehouseImageCollection.defaultImage)
+        }
+//        self.member1ImageView.image = tre
+    }
+    
+    //MARK: Call When Selected
+    func selectConfigure() {
+        self.treehouseView.backgroundColor = .trDimGreen
+        self.treehouseView.layer.borderColor = UIColor.trPrimaryGreen.cgColor
+        
+        self.checkImageView.image = TreehouseImageCollection.checkSelected
+    }
 }
 
 extension TreehouseSelectionTableViewCell {
@@ -161,6 +194,7 @@ extension TreehouseSelectionTableViewCell {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
+        cell.treehouse = treehouse
         return cell
     }
 }

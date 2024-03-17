@@ -23,7 +23,9 @@ class NotificationTableViewCell: UITableViewCell {
     
     private var userImageView: UIImageView = {
         let imageView = UIImageView()
-        
+        imageView.layer.cornerRadius = 18
+        imageView.clipsToBounds = true
+        imageView.image = TreehouseImageCollection.defaultImage
         return imageView
     }()
     
@@ -105,7 +107,10 @@ class NotificationTableViewCell: UITableViewCell {
     }
     
     func update() {
-//        self.contentLabel.text = notification.message
+        self.contentLabel.text = notification.message
+//        if let url = URL(string: notification.profileImageString) {
+//            self.userImageView.kf.setImage(with: url, placeholder: TreehouseImageCollection.defaultImage)
+//        }
     }
 }
 
