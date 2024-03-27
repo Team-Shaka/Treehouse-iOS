@@ -8,7 +8,6 @@
 import UIKit
 
 class ReactionButton: UIButton {
-    
     var emoji: String{
         didSet {
             updateLayout()

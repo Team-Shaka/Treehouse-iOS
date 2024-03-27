@@ -27,4 +27,5 @@ final class TreehouseImageCollection {
     static let plus: UIImage = #imageLiteral(resourceName: "plus")
     
     static let arrowLeft: UIImage = #imageLiteral(resourceName: "arrow_left")
+    static let defaultImage: UIImage = #imageLiteral(resourceName: "defaultImage")
 }

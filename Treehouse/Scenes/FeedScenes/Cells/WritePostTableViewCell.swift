@@ -9,6 +9,7 @@ import UIKit
 
 class WritePostTableViewCell: UITableViewCell {
     static let identifier: String = String(describing: WritePostTableViewCell.self)
+    weak var delegate: WritePostTableViewCellDelegate?
     
     private var mainContainerView: UIView = {
         let view = UIView()
@@ -33,6 +34,7 @@ class WritePostTableViewCell: UITableViewCell {
     private lazy var addPictureButton: UIButton = {
         let button = UIButton()
         button.setImage(TreehouseImageCollection.addPicture, for: .normal)
+        button.addTarget(self, action: #selector(addPhotoButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -84,12 +86,16 @@ class WritePostTableViewCell: UITableViewCell {
             make.trailing.equalTo(addPictureButton.snp.leading).inset(12)
         }
     }
+    
+    @objc func addPhotoButtonTapped() {
+        delegate?.addPhotoButtonTapped(cell: self)
+    }
 }
 
 extension WritePostTableViewCell {
-    static func makeCell(_ tableView: UITableView) -> UITableViewCell {
+    static func makeCell(_ tableView: UITableView) -> WritePostTableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WritePostTableViewCell.identifier) as? WritePostTableViewCell else {
-            return UITableViewCell()
+            return WritePostTableViewCell()
         }
         cell.selectionStyle = .none
         return cell

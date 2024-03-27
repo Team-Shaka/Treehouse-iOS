@@ -7,10 +7,12 @@
 
 import UIKit
 import FittedSheets
+import PhotosUI
 
 class FeedViewController: UIViewController {
     
     private var posts: [PostData] = []
+    private var treehouses: [TreehouseData] = []
     
     private var topView: UIView = {
         let view = UIView()
@@ -55,7 +57,7 @@ class FeedViewController: UIViewController {
         configure()
         addSubviews()
         makeConstraint()
-                fetchFeeds()
+        fetchFeeds()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,7 +66,7 @@ class FeedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     private func configure() {
@@ -125,40 +127,34 @@ class FeedViewController: UIViewController {
         TreehouseNetworkManager.shared.fetchFeed(treeId: 1) { [weak self] value, error in
             guard let self = self else { return }
 //            print(value, error)
-//            self.posts = value ?? []
-                self.posts = [PostData(postId: 3,
-                                       authorId: 1,
-                                       profileImageUrl: value?.first?.profileImageUrl ?? "",
-                                       memberName: "Member1",
-                                       content: "좀 돼라.",
-                                       postImageUrls: ["https://gist.github.com/Jeonhui/47927f5a1d7c57dfbf464da9af955230/raw/ae901f897c7edadcdc4d0cb6039995927519a72f/AppIcon.png", "https://gist.github.com/Jeonhui/47927f5a1d7c57dfbf464da9af955230/raw/0a85c4e9743e19bfe4b577e99607d1b7cdf41a93/briefing.png", "https://gist.github.com/Jeonhui/47927f5a1d7c57dfbf464da9af955230/raw/0a85c4e9743e19bfe4b577e99607d1b7cdf41a93/DailyQuest.png"],
-                                       createdAt: "2024-02-24",
-                                       commentCount: 13,
-                                       reactions: []),
-                              PostData(postId: 2,
-                                       authorId: 1,
-                                       profileImageUrl: value?.first?.profileImageUrl ?? "",
-                                       memberName: "Member1",
-                                       content: "Testing",
-                                       postImageUrls: [],
-                                       createdAt: "2024-02-24",
-                                       commentCount: 13,
-                                       reactions: []),
-                              PostData(postId: 1,
-                                       authorId: 1,
-                                       profileImageUrl: value?.first?.profileImageUrl ?? "",
-                                       memberName: "Member1",
-                                       content: "Treehouse",
-                                       postImageUrls: ["https://gist.github.com/Jeonhui/47927f5a1d7c57dfbf464da9af955230/raw/0a85c4e9743e19bfe4b577e99607d1b7cdf41a93/mellaAppIcon.png", "https://gist.github.com/Jeonhui/47927f5a1d7c57dfbf464da9af955230/raw/55aca5bee1f10e17dbc429cb2dff3e7abcb66a50/GUCCI.png"],
-                                       createdAt: "2024-02-24",
-                                       commentCount: 13,
-                                       reactions: [])]
-                self.feedTableView.reloadData()
-            }
+            self.posts = value ?? []
+            self.feedTableView.reloadData()
+        }
+    }
+    
+    private func fetchTreehouses() {
+        TreehouseNetworkManager.shared.fetchTreehouse { [weak self] value, error in
+            guard let self = self else { return }
+            print(value, error)
+            self.treehouses = value ?? []
+        }
+    }
+    
+    private func setImagePicker() {
+        var configuration = PHPickerConfiguration()
+        configuration.selectionLimit = 10
+        configuration.filter = .any(of: [.images])
+        
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        
+        self.present(picker, animated: true, completion: nil)
     }
         
     @objc func changeTreehouseButtonTapped() {
+        fetchTreehouses()
         let treehouseSelectionBottomSheetViewController = TreehouseSelectionBottomSheetViewController()
+        self.treehouses = treehouseSelectionBottomSheetViewController.treehouses
         let sheetController = SheetViewController(controller: treehouseSelectionBottomSheetViewController, sizes: [ .percent(0.5) , .fullscreen ])
         sheetController.dismissOnPull = true
         sheetController.overlayColor = .trDimGray
@@ -168,9 +164,15 @@ class FeedViewController: UIViewController {
         sheetController.cornerRadius = 30
         self.present(sheetController, animated: true, completion: nil)
     }
+    
+    @objc func openDetailPost() {
+//        let postViewController = PostViewController()
+//        postViewController.hidesBottomBarWhenPushed = true
+//        self.navigationController?.pushViewController(postViewController, animated: false)
+    }
 }
     
-extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
+extension FeedViewController: UITableViewDelegate, UITableViewDataSource, WritePostTableViewCellDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2 + posts.count
     }
@@ -178,11 +180,29 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0: return TreehallTableViewCell.makeCell(tableView)
-        case 1: return WritePostTableViewCell.makeCell(tableView)
+        case 1: 
+            let cell = WritePostTableViewCell.makeCell(tableView)
+            cell.delegate = self
+            return cell
         default:
             guard let post = posts[safe: indexPath.row-2] else { return UITableViewCell() }
-            return PostTableViewCell.makeCell(tableView,
-                                              post: post)
+            let cell = PostTableViewCell.makeCell(tableView,
+                                                  post: post)
+//            let postContentTap = UITapGestureRecognizer(target: self, action: #selector(openDetailPost))
+//            cell.contentView.addGestureRecognizer(postContentTap)
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: print("Treehall")
+        case 1: print("Write Post")
+        default:
+            let post = posts[indexPath.row-2]
+            let postViewController = PostViewController(postId: post.postId)
+            postViewController.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(postViewController, animated: false)
         }
     }
     
@@ -193,4 +213,27 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         default: 200
         }
     }
+    
+    func addPhotoButtonTapped(cell: WritePostTableViewCell) {
+        setImagePicker()
+    }
+}
+
+extension FeedViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        
+        let itemProvider = results.first?.itemProvider
+        
+        if let itemProvider = itemProvider,
+           itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
+                DispatchQueue.main.async {
+                    //
+                }
+            }
+        }
+    }
+    
+    
 }

@@ -43,6 +43,7 @@ extension TreehouseNetworkURLRequest {
         case comments(treeId: Int, postId: Int)
         case editComment(treeId: Int, postId: Int, commentId: Int)
         case notifications
+        case treehouse
         
         var path: String {
             switch self {
@@ -53,6 +54,7 @@ extension TreehouseNetworkURLRequest {
             case let .comments(treeId, postId): return "trees/\(treeId)/feed/posts/\(postId)/comments"
             case let .editComment(treeId, postId, commentId): return "trees/\(treeId)/feed/posts/\(postId)/comments/\(commentId)"
             case .notifications: return "notifications"
+            case .treehouse: return "trees"
             }
         }
         
@@ -65,6 +67,7 @@ extension TreehouseNetworkURLRequest {
             case .comments: return [.get, .post]
             case .editComment: return [.patch, .delete]
             case .notifications: return [.get]
+            case .treehouse: return [.get]
             }
         }
     }

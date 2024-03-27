@@ -125,6 +125,7 @@ extension TRHURLRequest {
                             forHTTPHeaderField: "Accept")
         urlRequest.setValue("application/json",
                             forHTTPHeaderField: "Content-Type")
+        
         if let accessToken = accessToken {
             urlRequest.setValue("Bearer \(accessToken)",
                                 forHTTPHeaderField: "Authorization")

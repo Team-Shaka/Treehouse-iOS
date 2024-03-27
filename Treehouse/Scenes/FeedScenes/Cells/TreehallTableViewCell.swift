@@ -73,7 +73,7 @@ class TreehallTableViewCell: UITableViewCell {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        print(mainContainerView.bounds)
+//        print(mainContainerView.bounds)
         mainContainerView.addGradientLayer(firstColor: .trHallGradientGreen,
                                            secondColor: .trHallGradientBlue)
     }

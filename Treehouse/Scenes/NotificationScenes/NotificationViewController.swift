@@ -26,7 +26,10 @@ class NotificationViewController: UIViewController {
     
     private var notificationTableView: UITableView = {
         let tableView = UITableView()
-        
+        tableView.backgroundColor = .clear
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
+        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
     
@@ -35,6 +38,12 @@ class NotificationViewController: UIViewController {
         configure()
         addSubviews()
         makeConstraint()
+        fetchNotifications()
+        
+        self.notifications = [NotificationData(id: 1, title: "HELFJDOF", message: "dsfjasdf", type: "LIKE"),
+                              NotificationData(id: 1, title: "HELFJDOF", message: "dsfjasdf", type: "LIKE"),
+                              NotificationData(id: 1, title: "HELFJDOF", message: "dsfjasdf", type: "LIKE"),
+                              NotificationData(id: 1, title: "HELFJDOF", message: "dsfjasdf", type: "LIKE")]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,11 +81,11 @@ class NotificationViewController: UIViewController {
         }
     }
     
-    private func fetchNotifcation() {
+    private func fetchNotifications() {
         TreehouseNetworkManager.shared.fetchNotification { [weak self] value, error in
             guard let self = self else { return }
 //            print(value, error)
-            self.notifications = value ?? []
+//            self.notifications = value ?? []
             self.notificationTableView.reloadData()
         }
     }
@@ -84,11 +93,13 @@ class NotificationViewController: UIViewController {
 
 extension NotificationViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.notifications.count
+//        print(self.notifications.count)
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let notification = notifications[safe: indexPath.row] else { return UITableViewCell() }
+//        guard let notification = notifications[safe: indexPath.row] else { return UITableViewCell() }
+        let notification = notifications[1]
         let cell = NotificationTableViewCell.makeCell(tableView,
                                                       notification: notification)
         return cell
